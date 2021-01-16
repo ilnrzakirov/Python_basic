@@ -1,7 +1,8 @@
 n = float(input("Введите первое число: "))
 k = float(input("Введите второе число: "))
 
-def reflect (number):
+
+def reflect(number):
     intg = ""
     fract = ""
     i = False
@@ -27,7 +28,6 @@ def reflect (number):
     return result
 
 
-
 n_1 = reflect(n)
 k_1 = reflect(k)
 
@@ -35,3 +35,5 @@ print(f"Первое число наоборот: {n_1}")
 print(f"Второе число наоборот: {k_1}")
 print(f"Сумма: {float(n_1) + float(k_1)}")
 
+
+# зачёт!
