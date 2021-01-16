@@ -7,7 +7,7 @@ def summ(number):
         remains = number % 10
         result += remains
         number //= 10
-    print(f"Сумма чисел: {i}")
+    print(f"Сумма чисел: {result}")
     return result
 
 
@@ -16,7 +16,7 @@ def quantity(number):
     while number != 0:
         result += 1
         number //= 10
-    print(f"Количесвто цифр в числе: {i}")
+    print(f"Количесвто цифр в числе: {result}")
     return result
 
 
