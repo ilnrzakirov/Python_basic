@@ -2,22 +2,22 @@ n = int(input("Введите число : "))
 
 # TODO, пожалуйста поправьте нейминг. Пока что не очень ясно, что значит переменная "i".
 def summ(number):
-    i = 0
+    result = 0
     while number != 0:
         remains = number % 10
-        i += remains
+        result += remains
         number //= 10
     print(f"Сумма чисел: {i}")
-    return i
+    return result
 
 
 def quantity(number):
-    i = 0
+    result = 0
     while number != 0:
-        i += 1
+        result += 1
         number //= 10
     print(f"Количесвто цифр в числе: {i}")
-    return i
+    return result
 
 
 summ = summ(n)
