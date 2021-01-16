@@ -1,5 +1,6 @@
 n = int(input("Введите число : "))
 
+
 # , пожалуйста поправьте нейминг. Пока что не очень ясно, что значит переменная "i".
 def summ(number):
     result = 0
@@ -24,5 +25,7 @@ summ = summ(n)
 quantity = quantity(n)
 print(f"Разность суммы и количества цифр : {summ - quantity}")
 
-# TODO, пока что при запуске кода ошибка
+# , пока что при запуске кода ошибка
 #  NameError: name 'i' is not defined
+
+# зачёт!
