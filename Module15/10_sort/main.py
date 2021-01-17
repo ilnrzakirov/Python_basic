@@ -1,4 +1,4 @@
-first_list = [10, 4, -3, -5, 8, -7, 5, 1, 9, -18, -500, 127]
+first_list = [10, 4, -3, -5, 8, -7, 5, 1, 9, -18, -500, 127, -198]
 min_list = min(first_list)
 items = len(first_list)
 
