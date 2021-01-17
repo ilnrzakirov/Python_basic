@@ -1,4 +1,4 @@
-first_list = [1, 4, -3, 0, 10, -125, -500, 17]  # TODO, добавил элементы в список и работать перестало =)
+first_list = [10, 4, -3, -5, 8, -7, 5, 1, 9, -18]
 min_list = min(first_list)
 items = len(first_list)
 flag = False  # TODO, переменная лишняя
@@ -18,15 +18,15 @@ first_list = sort(first_list)
 while flag != True:  # TODO, лучше без переменной.
     item = first_list[1]
     res = 0
-    for number in first_list[:-2]:
-        # Почем после цикла вайл программа снова запускает сортировку!
-        if item >= number:  # TODO, видимо из-за этого условия. Оно не срабатывает и мы переходим в else.
-            item = first_list[number + 2]
-            res += 1
+    for number in first_list [:-2]:
+        if item >= number:
+            item = first_list[res + 2]
+            res +=1
         else:
             first_list = sort(first_list)
             res = 0
-        if res == len(first_list) - 2:
+            break
+        if res == len(first_list) -2:
             flag = True
             break
 
