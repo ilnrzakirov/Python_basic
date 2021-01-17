@@ -1,24 +1,28 @@
-a = [1, 5, 3]
-b = [1, 5, 1, 5]
-c = [1, 3, 1, 5, 3, 3]
-for i in b:
-    a.append(i)
-t = 0
-for i in a:
-    if i == 5:
-        t += 1
-print(t)
-d = []
-for i in a:
-    if i != 5:
-        d.append(i)
-for i in c:
-    d.append(i)
-t = 0
-for i in d:
-    if i == 3:
-        t += 1
-print(t)
-print(d)
+first_list = [1, 4, -3, 0, 10]
+min_list = min(first_list)
+items = len(first_list)
+flag = False
 
-# TODO переписать программу
+def sort (first_list):
+    for number in range (len(first_list) - 1) :
+        first_item = first_list[number]
+        sescond_item = first_list [number + 1]
+        if first_item > sescond_item:
+            first_list[number], first_list[number + 1] = first_list[number + 1], first_list[number]
+    return first_list
+
+first_list = sort(first_list)
+
+while flag != True:
+    item = first_list[1]
+    for number in first_list [:-2]:
+        if item >= number:
+            item = first_list[number + 2]
+        else:
+            first_list = sort(first_list)
+        if number == first_list [:-2]:
+            flag = True
+            break
+
+
+print(first_list)
