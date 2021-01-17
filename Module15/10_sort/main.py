@@ -1,4 +1,4 @@
-first_list = [1, 4, -3, 0, 10]
+first_list = [10, 4, -3, -5, 8]
 min_list = min(first_list)
 items = len(first_list)
 flag = False
@@ -18,11 +18,12 @@ while flag != True:
     res = 0
     for number in first_list [:-2]:
         if item >= number:
-            item = first_list[number + 2]
+            item = first_list[res + 2]
             res +=1
         else:
             first_list = sort(first_list)
             res = 0
+            break
         if res == len(first_list) -2:
             flag = True
             break
