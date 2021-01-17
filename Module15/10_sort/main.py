@@ -18,16 +18,18 @@ res = 0
 while res < len(first_list) - 2:
     item = first_list[1]
     res = 0
-    for number in first_list [:-2]:
+    for number in first_list[:-2]:
         if item >= number:
             item = first_list[res + 2]
-            res +=1
+            res += 1
         else:
             first_list = sort(first_list)
             res = 0
             break
-        if res == len(first_list) -2:
+        if res == len(first_list) - 2:
             flag = True
             break
 
 print(first_list)
+
+# зачёт!
