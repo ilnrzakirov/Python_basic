@@ -1,7 +1,6 @@
 first_list = [10, 4, -3, -5, 8, -7, 5, 1, 9, -18, -500, 127]
 min_list = min(first_list)
 items = len(first_list)
-flag = False  # TODO, переменная лишняя
 
 
 def sort(first_list):
@@ -14,8 +13,9 @@ def sort(first_list):
 
 
 first_list = sort(first_list)
+res = 0
 
-while flag != True:  # TODO, лучше без переменной.
+while res < len(first_list) - 2:
     item = first_list[1]
     res = 0
     for number in first_list [:-2]:
