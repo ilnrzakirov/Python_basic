@@ -6,11 +6,12 @@ result_2 = 0
 
 name = input("Введите название: ")
 for i_team in shop:
-        for item in i_team:
-                if item == name:
-                        result_1 +=1
-                        result_2 += i_team [1]
+    for item in i_team:
+        if item == name:
+            result_1 += 1
+            result_2 += i_team[1]
 
 print(f"Количество деталей: {result_1}")
 print(f"Общая стоимость: {result_2}")
 
+# зачёт!
