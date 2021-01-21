@@ -3,3 +3,5 @@ class_2 = list(range(162, 181, 3))
 
 class_1.extend(class_2)
 print(class_1)
+
+# зачёт!
