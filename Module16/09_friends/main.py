@@ -20,3 +20,13 @@ for number in range (voucher):
 print("Баланс друзей")
 for i_team in range (frends):
     print(f"{frends_bank[i_team][0]} : {frends_bank[i_team][1]}")
+
+# TODO, пока что ответ отличается от примера
+#  1 расписка
+#  От кого: 1
+#  Кому: 3
+#  Cумма: 100
+#  Баланс друзей
+#  1 : -100
+#  2 : 0
+#  3 : 100
