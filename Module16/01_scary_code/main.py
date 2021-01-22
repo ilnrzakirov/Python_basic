@@ -6,12 +6,13 @@ first_list.extend(second_list)
 count_list = first_list.count(5)
 print(f"Количество цифр 5 при первом объединении: {count_list}")
 
-#TODO наверное было бы правильно сохранить результат вычисления first_list.count(5)
+# наверное было бы правильно сохранить результат вычисления first_list.count(5)
 # и использовать его в выводе и в range.
-for _ in range (count_list):
+for _ in range(count_list):
     first_list.remove(5)
 first_list.extend(third_list)
 print(f"Количество цифр 3 при втором объединении: {first_list.count(3)}")
 
-
 print(first_list)
+
+# зачёт!
