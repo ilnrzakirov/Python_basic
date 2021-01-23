@@ -30,3 +30,5 @@ for i_team in range (frends):
 #  1 : -100
 #  2 : 0
 #  3 : 100
+
+# TODO, пока что ошибка IndexError: list index out of range =) Давайте поправим =)
