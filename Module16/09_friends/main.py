@@ -14,8 +14,8 @@ for number in range (voucher):
     sender = int(input("От кого: "))
     recipient = int(input("Кому: "))
     summ = int(input("Cумма: "))
-    frends_bank[sender - 1][1] += summ
-    frends_bank[recipient - 1][1] -= summ
+    frends_bank[sender - 1][1] -= summ
+    frends_bank[recipient - 1][1] += summ
 
 print("Баланс друзей")
 for i_team in range (frends):
