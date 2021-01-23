@@ -11,11 +11,11 @@ for num in range (1, frends + 1):
 
 for number in range (voucher):
     print(f"{number + 1} расписка ")
-    sender = int(input("От кого: "))
     recipient = int(input("Кому: "))
+    sender = int(input("От кого: "))
     summ = int(input("Cумма: "))
-    frends_bank[sender - 1][1] -= summ
-    frends_bank[recipient - 1][1] += summ
+    frends_bank[sender - 1][1] += summ
+    frends_bank[recipient - 1][1] -= summ
 
 print("Баланс друзей")
 for i_team in range (frends):
