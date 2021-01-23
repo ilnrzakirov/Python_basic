@@ -1,1 +1,35 @@
-# TODO здесь писать код
+frends = int(input("Количество друзей: "))
+voucher = int(input("Количество расписок: "))
+sender = 0
+recipient = 0
+frends_bank = []
+
+for num in range(1, frends + 1):
+    frends_bank.append(list(range(num, num + 2)))
+    frends_bank[num - 1][1] = 0
+
+for number in range(voucher):
+    print(f"{number + 1} расписка ")
+    recipient = int(input("Кому: "))
+    sender = int(input("От кого: "))
+    summ = int(input("Cумма: "))
+    frends_bank[sender - 1][1] += summ
+    frends_bank[recipient - 1][1] -= summ
+
+print("Баланс друзей")
+for i_team in range(frends):
+    print(f"{frends_bank[i_team][0]} : {frends_bank[i_team][1]}")
+
+# , пока что ответ отличается от примера
+#  1 расписка
+#  От кого: 1
+#  Кому: 3
+#  Cумма: 100
+#  Баланс друзей
+#  1 : -100
+#  2 : 0
+#  3 : 100
+
+# , пока что ошибка IndexError: list index out of range =) Давайте поправим =)
+
+# зачёт!
