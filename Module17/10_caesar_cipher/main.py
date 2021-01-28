@@ -4,17 +4,17 @@ l = ['а','б','в','г','д','е','ж','з','и','й','к','л','м','н','о',
 text = input("Введите сообщение: ")
 shift = int(input("Сдвиг: "))
 encrypted = ""
+remains = 0
 
 for symbol in text:
-    if symbol != " ":
-        i_symbol = l.index(symbol)
-        if i_symbol + shift >= len(l):
-            remains = len(l) - (i_symbol) + 1
-            shift = remains - shift
-            encrypted += l[i_symbol + abs(shift)]
+    if symbol !=" ":
+        i_team = l.index(symbol)
+        if i_team + shift > 31:
+            shift1 = shift - (31 - i_team)
+            encrypted += l[shift1 - 1]
             continue
-
-        encrypted += l[i_symbol + shift]
-
+        encrypted += l[i_team + shift]
+    else:
+        encrypted += symbol
 
 print(encrypted)
