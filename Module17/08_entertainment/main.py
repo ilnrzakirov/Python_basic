@@ -17,5 +17,7 @@ for symbol in stick_list:
         stick_list [ind] = ["|"]
 
 
+# TODO как вывести результат в формате "Результат: I.....I..." ?
+
 
 print(stick_list)
