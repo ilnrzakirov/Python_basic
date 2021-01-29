@@ -9,15 +9,15 @@ for i_throws in range (throws):
     left = int(input("Сбиты палки с номера  "))
     rigth = int(input("по номер  "))
     for i_border in range (left, rigth + 1):
-        stick_list [i_border - 1] = ["."]
+        stick_list [i_border - 1] = "."
 
 for symbol in stick_list:
-    if symbol != ["."]:
+    if symbol != ".":
         ind = stick_list.index(symbol)
-        stick_list [ind] = ["|"]
+        stick_list [ind] = "I"
 
 
 # TODO как вывести результат в формате "Результат: I.....I..." ?
+for x in range (len(stick_list)):
+    print(stick_list[x], end="")
 
-
-print(stick_list)
