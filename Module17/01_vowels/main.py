@@ -6,3 +6,4 @@ print(f"Список гласных букв {vowels_text}")
 print(f"Длина списка {len(vowels_text)}")
 
 # зачёт!
+# зачёт!
