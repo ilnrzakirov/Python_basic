@@ -5,4 +5,3 @@ result = "".join(str(res))
 
 print(result)
 
-# Я не понял почему join создет список
