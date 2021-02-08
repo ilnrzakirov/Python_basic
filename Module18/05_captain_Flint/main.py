@@ -16,3 +16,5 @@ else:
     coordinate_x = "-" + str(x_list[1])
 
 print("Координаты {} {}".format(coordinate_x, coordinate_y))
+
+# зачёт!

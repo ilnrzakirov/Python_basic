@@ -11,3 +11,5 @@ for number in ip:
         break
 else:
     print("IP адресс корректен ")
+
+# зачёт!
