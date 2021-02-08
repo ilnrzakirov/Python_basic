@@ -1,1 +1,2 @@
-# TODO здесь писать код
+text = input("Введите текст: ")
+print(text.title())
