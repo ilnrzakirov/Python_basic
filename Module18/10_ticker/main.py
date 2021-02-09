@@ -19,3 +19,5 @@ if chek == True:  # лучше просто "if chek"
 
 if chek == True:  # лучше просто "if chek"
     print("Первая строка получается из второй со сдвигом {}".format(shift))
+
+# зачёт!
