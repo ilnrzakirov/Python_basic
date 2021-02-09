@@ -38,9 +38,8 @@ quantity = 3
 output_text2 =""
 
 for i_team in output_text1:
-    if "." in i_team:
-        quantity += 1
     remains = transfer(i_team, quantity)
     output_text2 += remains + " "
-
+    if "." in i_team:
+        quantity += 1
 print(output_text2)
