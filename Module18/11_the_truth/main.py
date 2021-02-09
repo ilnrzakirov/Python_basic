@@ -28,4 +28,7 @@ for sym in output_text:
 # после каждой точки увеличивается количество перенесенных букв.
 print(output_text1)
 
+def transfer (word, quantity): #функция перестановки букв
+    new_word = word[-quantity:] + word[:quantity]
+    return new_word
 
