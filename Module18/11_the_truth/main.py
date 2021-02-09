@@ -8,7 +8,8 @@ def ceasar_cipher (text, shift):
 alphabet = 'abcdefghijklmnopqrstuvwxyz' #26
 shift = 25
 sym_list = ".,/!?)(+ "
-text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm'
+text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm yDpnqmf jt ' \
+       'cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/'
 
 
 output_text = ceasar_cipher(text, shift)
@@ -47,4 +48,4 @@ for i_team in output_text1:
         quantity += 1
 print(output_text2)
 
-
+# Взял по большое текста, алгоритм снова не работает -( в конце перевод букв смешаны. 4/2/4 и 3/1/3
