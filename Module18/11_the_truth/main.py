@@ -9,7 +9,7 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz' #26
 shift = 25
 sym_list = ".,/!?)(+ "
 text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm yDpnqmf jt ' \
-       'cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/'
+       'cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ '
 
 
 output_text = ceasar_cipher(text, shift)
