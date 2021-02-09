@@ -4,7 +4,6 @@ new_text = ""
 text1 = text.split()
 new_word = ""
 
-
 for i_word in text1:
     for i_team in i_word:
         if not i_team in sym_list:
@@ -15,3 +14,6 @@ for i_word in text1:
     new_word = ""
 
 print(new_text)
+
+# Или, можно решить при помощи индексов =)
+# зачёт!
