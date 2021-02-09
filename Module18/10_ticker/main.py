@@ -10,8 +10,12 @@ for symbol in str1:
         break
 if chek == True:
     remains = str1[0]
-    remains = str2.index(remains)
-    for i_team in str1:
-        if
+    shift = str2.index(remains)
+    for i_num in range (len(str1)):
+        if str1[i_num] != str2[(i_num + shift) % len(str2)]:
+            print("Первую строку нельзя получить из второй со сдвигом")
+            chek = False
+            break
+if chek == True:
+    print("Первая строка получается из второй со сдвигом {}".format(shift))
 
-print(i_symbol_str1)
