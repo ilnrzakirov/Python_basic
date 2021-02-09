@@ -28,7 +28,19 @@ for sym in output_text:
 # после каждой точки увеличивается количество перенесенных букв.
 print(output_text1)
 
-def transfer (word, quantity): #функция перестановки букв
-    new_word = word[-quantity:] + word[:quantity]
+def transfer (word, quantity): # функция перестановки букв
+    new_word = word[-quantity:] + word[:-quantity]
     return new_word
 
+output_text1 = output_text1.split()
+
+quantity = 3
+output_text2 =""
+
+for i_team in output_text1:
+    if "." in i_team:
+        quantity += 1
+    remains = transfer(i_team, quantity)
+    output_text2 += remains + " "
+
+print(output_text2)
