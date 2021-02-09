@@ -39,7 +39,12 @@ output_text2 =""
 
 for i_team in output_text1:
     remains = transfer(i_team, quantity)
-    output_text2 += remains + " "
+    if i_team != "si": # если реализовать перестановку от количества букв то is превратится в si и наоборот
+        output_text2 += remains + " "
+    else:
+        output_text2 += "is" + " "
     if "." in i_team:
         quantity += 1
 print(output_text2)
+
+
