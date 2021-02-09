@@ -25,4 +25,7 @@ for sym in output_text:
     else:
         output_text1 += sym
 
+# после каждой точки увеличивается количество перенесенных букв.
 print(output_text1)
+
+
