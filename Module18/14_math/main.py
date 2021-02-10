@@ -46,7 +46,7 @@ if word.count(")"): # Решение внутри скобок
     word2.insert(0, number1)
 # от скобок избавились -)
 
-    print(type(word2), word2)
+
 
 print(number1)
 print(f"ответ {word}")
