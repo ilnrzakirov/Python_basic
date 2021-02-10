@@ -10,7 +10,8 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'  # 26
 shift = 25
 sym_list = ".,/!?)(+ "
 text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm yDpnqmf jt ' \
-       'cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ '
+       'cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf ' \
+       'dbtft (ubsfo djbmtqf hifopv up csfbl ifu t/svmf ipvhiBmu zqsbdujdbmju fbutc uz/qvsj Fsspst tipvme wfsof qbtt'
 
 output_text = ceasar_cipher(text, shift)
 print(output_text)
@@ -31,6 +32,8 @@ print(output_text1)
 
 
 def transfer(word, quantity):  # функция перестановки букв
+    if len(word) < quantity:
+        quantity = quantity - len(word)
     new_word = word[-quantity:] + word[:-quantity]
     return new_word
 
@@ -54,3 +57,4 @@ print(output_text2)
 # не понятно как все это впихнуть в один цикл
 # TODo, действительно, вместо "tfla is etterb ntha nested. " должно получится
 #  "flat is better than nested.", давайте подумаем ещё =) Вы близки к разгадке.
+# Понял я где недоделал. Если количество передвигаемых букв больше слово, то передвигается только остаток от их разности
