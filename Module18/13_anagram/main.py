@@ -3,13 +3,9 @@ second_word = input("Введите второе слово: ")
 chek = True
 
 for symbol in first_word:
-    if not second_word.count(symbol):
+    if first_word.count(symbol) != second_word.count(symbol):
         print("Слова не являются анаграммами друг друга")
         chek = False
         break
-    else:
-
-
-
-if chek == True:
+if chek:
     print("Слова являются анаграммами друг друга")
