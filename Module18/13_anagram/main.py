@@ -9,3 +9,5 @@ for symbol in first_word:
         break
 if chek:
     print("Слова являются анаграммами друг друга")
+
+# зачёт!
