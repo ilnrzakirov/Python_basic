@@ -8,7 +8,7 @@ def ceasar_cipher(text, shift):
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'  # 26
 shift = 25
-sym_list = ".,/!?)(+ "
+sym_list = ".,/!?)(+ -"
 text = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm yDpnqmf jt ' \
        'cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf ' \
        'dbtft (ubsfo djbmtqf hifopv up csfbl ifu t/svmf ipvhiBmu zqsbdujdbmju fbutc uz/qvsj Fsspst tipvme wfsof qbtt'
