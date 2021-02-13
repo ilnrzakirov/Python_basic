@@ -52,10 +52,12 @@ if "*" in word2: # Определение индексов
     indc = word2.index("*")
 else:
     indc = str(len(word2) + 1)
+
 if "-" in word2:
     indmin = word2.index("-")
 else:
     indmin = str(len(word2) + 1)
+
 if "+" in word2:
     indplus = word2.index("+")
 else:
@@ -75,6 +77,7 @@ elif int(indc) < int(indmin) and int(indplus) < int(indmin):
         word2.pop(0)
     word4 = evl(word3)
     word2.insert(0, str(word4))
+
 if int(indc) > int(indmin) and int(indmin) < len(word2) +1 and int(indmin) < int(indplus):
     word3 = word2 [int(indmin) + 1 : int(indplus) - 1]
     for sym in word3:
@@ -93,6 +96,12 @@ word = evl(word2)
 
 print(f"ответ {word}")
 # проше было бы использовать eval
-# TODO, предлагаю реализовать несколько функций. Для умножения, сложения и вычитания.
+# , предлагаю реализовать несколько функций. Для умножения, сложения и вычитания.
 #  + Возможно функцию для раскрытия скобок. Функция должна будет брать код в скобках
 #  и применять к нему одну из наших функций. И возвращать итог, для дальнейшей работы алгоритма =)
+
+# TODO Выражение: (5+4)*2-10+5
+#  ['9', '*', '2']
+#  ['18', '-', '1', '0', '+', '5']
+#  ответ 528
+#  Правильный ответ 13 =)
