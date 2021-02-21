@@ -10,4 +10,12 @@ violator_songs = {
     'Clean': 5.83
 }
 
-# TODO здесь писать код
+total_t = 0
+songs = int(input("Сколько песен выбрать? "))
+for i_song in range (songs):
+    song = input("Название {} песни: ".format(i_song + 1))
+    if song in violator_songs:
+        total_t += violator_songs[song]
+    else:
+        print("Песня отсутсвует в списке ")
+print("Общее время звучания песен: {}".format(total_t))
