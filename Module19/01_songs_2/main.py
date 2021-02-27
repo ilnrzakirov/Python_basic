@@ -13,8 +13,8 @@ violator_songs = {
 total_t = 0
 songs = int(input("Сколько песен выбрать? "))
 # TODO, как реализовать range таким образом, чтобы не производить в цикле вычисления (+1) с переменной цикла?
-for i_song in range(songs):
-    song = input("Название {} песни: ".format(i_song + 1))
+for i_song in range(1, songs + 1):
+    song = input("Название {} песни: ".format(i_song))
     if song in violator_songs:
         total_t += violator_songs[song]
     else:
