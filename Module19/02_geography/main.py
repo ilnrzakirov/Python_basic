@@ -11,13 +11,12 @@ country_dict = dict()
 for i_country in range(1, countries + 1):
     print("{} страна: ".format(i_country), end=" ")
     # TODO, предлагаю попробовать объединить переменные country и country_list в одну.
-    country = input()
-    country_list = country.split()
+    country_list = input().split()
     # TODO, для сокращения количества [][] в коде, предлагаю создать переменную
     #  для country_list[0] и далее в коде работать с ней.
-    country_dict[country_list[0]] = []
+    country = country_dict[country_list[0]] = []
     for i_city in country_list[1:]:
-        country_dict[country_list[0]].append(i_city)
+        country.append(i_city)
 print(country_dict)
 
 for i_city in range(1, 4):
