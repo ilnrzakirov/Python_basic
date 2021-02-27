@@ -24,4 +24,14 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+print("Лампа -", store[goods["Лампа"]][0]["quantity"], "шт, стоимость", store[goods["Лампа"]][0]["quantity"] *
+      store[goods["Лампа"]][0]["price"], "руб.")
+print("Стол - ", store[goods['Стол']][0]["quantity"] + store[goods['Стол']][1]["quantity"], "шт, стоимость",
+      store[goods['Стол']][0]["quantity"] * store[goods['Стол']][0]["price"] + store[goods['Стол']][1]["quantity"] *
+      store[goods['Стол']][1]["price"], "руб.")
+print("Диван - ", store[goods['Диван']][0]["quantity"] + store[goods['Диван']][1]["quantity"], "шт, стоимость",
+      store[goods['Диван']][0]["quantity"] * store[goods['Диван']][0]["price"] + store[goods['Диван']][1]["quantity"]*
+      store[goods['Диван']][1]["price"], "руб.")
+print("Стул - ", store[goods['Стул']][0]["quantity"] + store[goods['Стул']][1]["quantity"] + store[goods['Стул']][2]["quantity"],
+      "штб стоимость", store[goods['Стул']][0]["quantity"] * store[goods['Стул']][0]["price"] + store[goods['Стул']][1]["quantity"] *
+      store[goods['Стул']][1]["price"] + store[goods['Стул']][2]["quantity"] * store[goods['Стул']][2]["price"], "руб.")
