@@ -34,7 +34,7 @@ chair = store[goods['Стул']]
 lamp_total_price = lamp[0]["quantity"] * lamp[0]["price"]
 # TODO, в коде есть небольшая опечатка, в связи с этим, итоговая сумма столов пока что выводится некорректно.
 table_total_quantity = table[0]["quantity"] + table[1]["quantity"]
-table_total_price = table[0]["quantity"] * table[0]["price"]
+table_total_price = table[0]["quantity"] * table[0]["price"] + table[1]["quantity"] * table[1]["price"]
 sofa_total_quantity = sofa[0]["quantity"] + sofa[1]["quantity"]
 sofa_total_price = sofa[0]["quantity"] * sofa[0]["price"] + sofa[1]["quantity"] * sofa[1]["price"]
 chair_total_quantity = chair[0]["quantity"] + chair[1]["quantity"] + chair[2]["quantity"]
