@@ -10,9 +10,9 @@ country_dict = dict()
 
 for i_country in range(1, countries + 1):
     print("{} страна: ".format(i_country), end=" ")
-    # TODO, предлагаю попробовать объединить переменные country и country_list в одну.
+    # , предлагаю попробовать объединить переменные country и country_list в одну.
     country_list = input().split()
-    # TODO, для сокращения количества [][] в коде, предлагаю создать переменную
+    # , для сокращения количества [][] в коде, предлагаю создать переменную
     #  для country_list[0] и далее в коде работать с ней.
     country = country_dict[country_list[0]] = []
     for i_city in country_list[1:]:
@@ -28,3 +28,5 @@ for i_city in range(1, 4):
             break
     else:
         print("По городу {} нет данных".format(city))
+
+# зачёт!
