@@ -28,18 +28,24 @@ store = {
 # TODO, Ильнур, ответ верный, давайте поработаем над стилем.
 #  Предлагаю для store[goods['Стол']] и т.д. придумать переменные и использовать их в вычислениях,
 #  в таком случае, кода станет меньше. И пропадёт большое кол-во [[[]]].
+table = store[goods['Стол']]
+lamp = store[goods["Лампа"]]
+sofa = store[goods['Диван']]
+chair = store[goods['Стул']]
+lamp_total_price = lamp[0]["quantity"] * lamp[0]["price"]
+table_total_quantity = table[0]["quantity"] + table[1]["quantity"]
+table_total_price = table[0]["quantity"] * table[0]["price"]
+sofa_total_quantity = sofa[0]["quantity"] + sofa[1]["quantity"]
+sofa_total_price = sofa[0]["quantity"] * sofa [0]["price"] + sofa[1]["quantity"] * sofa[1]["price"]
+chair_total_quantity = chair[0]["quantity"] + chair[1]["quantity"] + chair[2]["quantity"]
+chair_total_price = chair[0]["quantity"] * chair[0]["price"] + chair[1]["quantity"] * chair[1]["price"] + \
+                    chair [2]["quantity"] * chair[2]["price"]
 
 # TODO, Делать большое количество вычислений в print не очень хорошо.
 #  Предлагаю создать дополнительные переменные для вычислений и уже их вывести при помощи print.
 
-print("Лампа -", store[goods["Лампа"]][0]["quantity"], "шт, стоимость", store[goods["Лампа"]][0]["quantity"] *
-      store[goods["Лампа"]][0]["price"], "руб.")
-print("Стол - ", store[goods['Стол']][0]["quantity"] + store[goods['Стол']][1]["quantity"], "шт, стоимость",
-      store[goods['Стол']][0]["quantity"] * store[goods['Стол']][0]["price"] + store[goods['Стол']][1]["quantity"] *
-      store[goods['Стол']][1]["price"], "руб.")
-print("Диван - ", store[goods['Диван']][0]["quantity"] + store[goods['Диван']][1]["quantity"], "шт, стоимость",
-      store[goods['Диван']][0]["quantity"] * store[goods['Диван']][0]["price"] + store[goods['Диван']][1]["quantity"]*
-      store[goods['Диван']][1]["price"], "руб.")
-print("Стул - ", store[goods['Стул']][0]["quantity"] + store[goods['Стул']][1]["quantity"] + store[goods['Стул']][2]["quantity"],
-      "штб стоимость", store[goods['Стул']][0]["quantity"] * store[goods['Стул']][0]["price"] + store[goods['Стул']][1]["quantity"] *
-      store[goods['Стул']][1]["price"] + store[goods['Стул']][2]["quantity"] * store[goods['Стул']][2]["price"], "руб.")
+print("Лампа -", lamp[0]["quantity"], "шт, стоимость", lamp_total_price, "руб.")
+print("Стол - ", table_total_quantity, "шт, стоимость", table_total_price, "руб.")
+print("Диван - ", sofa_total_quantity, "шт, стоимость", sofa_total_price, "руб.")
+print("Стул - ", chair_total_quantity,
+      "штб стоимость", chair_total_price, "руб.")
