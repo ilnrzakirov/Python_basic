@@ -25,12 +25,22 @@ for name in famaly_dict:
         parent = name
 
 height = dict()
-height[0] = parent
+height[0] = []
+height[0].append(parent)
 height[1] = famaly_dict[parent]
 height[2] = chekchild(famaly_dict[parent], famaly_dict)
 for shift in range (3, len(famaly_dict)):
     height[shift] = chekchild(height[shift -1], famaly_dict)
 
-print(height)
+famaly_dict.clear()
+
+for i_height in  height:
+    for elements in height[i_height]:
+        famaly_dict[elements] = i_height
+
+for name in sorted(famaly_dict.keys()):
+    print(name, famaly_dict[name])
+
+
 
 
