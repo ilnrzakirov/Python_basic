@@ -1,7 +1,7 @@
 max_number = int(input("Введите макисмальное число: "))
 
 answer_boris = ""
-answer_dict = dict ()
+answer_dict = dict()
 while answer_boris != "Помогите!":
     answer_boris = input("Нужное число есть среди вот этих чисел: ")
     if answer_boris == "Помогите!":
@@ -25,3 +25,6 @@ for sym in answer_dict["Нет"]:
 print('Артем мог загадать числа: ', end="")
 for sym in answer_dict["Да"]:
     print(sym, end=" ")
+
+# TODO, ответ Артёма у пользователя запрашивать не нужно.
+#  "Да" или "Нет" должен вывести наш код после проверки =)
