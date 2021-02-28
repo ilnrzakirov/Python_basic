@@ -5,17 +5,18 @@ string = input("Введите строку: ")
 #  Если всех букв чётное количество, то палиндромом слово сделать можно.
 #  Если нечётное количество больше чем у одной буквы, то нельзя.
 
-nok = 0
-ok = 0
-remains = 1
+sym_dict = dict ()
+chek = 0
 for sym in string:
-    if sym not in string [remains:]:
-        nok +=1
+    if sym in sym_dict:
+        sym_dict[sym] += 1
     else:
-        ok += 1
-    remains += 1
+        sym_dict[sym] = 1
 
-if nok - ok > 1:
-    print("Нельзя сделать палиндром")
+for sym in sym_dict:
+    if sym_dict[sym] % 2 != 0:
+        chek += 1
+if chek > 1:
+    print("Нельзя сделать полиндром")
 else:
-    print('Можно сделать палиндром')
+    print("Можно сделать полиндром")
