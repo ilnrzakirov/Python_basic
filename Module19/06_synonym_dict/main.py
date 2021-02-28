@@ -9,7 +9,7 @@ for i_pairs in range(1, num_pairs + 1):
     pairs_dict_rev[pair[1]] = pair[0]
 
 flag = False
-while flag == False:  # Правильнее просто "while not flag" =)
+while not flag:  # Правильнее просто "while not flag" =)
     word = input("Введите слово: ").lower()
     if word in pairs_dict:
         print("Синоним {}".format(pairs_dict[word]))
