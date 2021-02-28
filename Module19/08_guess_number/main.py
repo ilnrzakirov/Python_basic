@@ -1,12 +1,21 @@
+import random
 max_number = int(input("Введите макисмальное число: "))
 
 answer_boris = ""
 answer_dict = dict()
+
+number_artem = random.randint(0, max_number)
+print(number_artem)
 while answer_boris != "Помогите!":
     answer_boris = input("Нужное число есть среди вот этих чисел: ")
     if answer_boris == "Помогите!":
         break
-    answer_artem = input("Ответ Артема: ")
+    if str(number_artem) in answer_boris.split():
+        answer_artem = "Да"
+        print("Ответ Артема: Да")
+    else:
+        answer_artem = "Нет"
+        print("Ответ Артема: Нет")
     if answer_artem == "Да":
         if "Да" in answer_dict:
             answer_dict["Да"].append(answer_boris.split())
