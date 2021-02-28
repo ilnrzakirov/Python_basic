@@ -7,27 +7,23 @@ def chekchild(dict_parent, all_dict):
                     child.append(human)
     return child
 
-
 people = int(input("Введите количество человек: "))
 
-
-# TODO, по идее, список лишний.
 chaild = []
+# TODO, по идее, список лишний.
 famaly_dict = dict()
 for human in range(1, people):
-    pair = input("{} пара: ".format(human)).split()
+    pair, second_pair = input("{} пара: ".format(human)).split()
     # TODO получить сразу 2 переменные при split можно, если укажем слева от "=" сразу 2 названия переменных.
     #  pair, second_pair = input(...)
     # TODO, предлагаю сразу добавлять в словарь значение по ключу. Список с проверкой не нужен =)
     #  Возможно, исходя из текущих рекомендаций, сможем упростить код ниже =)
-    chaild.append(pair[0])
-    if pair[1] in famaly_dict:
-        famaly.append(pair[0])
+    if second_pair in famaly_dict:
+        famaly_dict[second_pair].append(pair)
     else:
-        famaly = famaly_dict[pair[1]] = []
-        famaly.append(pair[0])
-
-
+        famaly_dict[second_pair] = []
+        famaly_dict[second_pair].append(pair)
+    chaild.append(pair)
 
 for name in famaly_dict:
     if name not in chaild:
@@ -37,8 +33,7 @@ height = dict()
 height[0] = []
 height[0].append(parent)
 height[1] = famaly_dict[parent]
-height[2] = chekchild(famaly_dict[parent], famaly_dict)
-for shift in range(3, len(famaly_dict)):
+for shift in range(2, len(famaly_dict)):
     height[shift] = chekchild(height[shift - 1], famaly_dict)
 
 famaly_dict.clear()
