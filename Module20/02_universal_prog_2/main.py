@@ -1,9 +1,8 @@
 def is_prime(number):
-    chek = True
     for num in range(2, number - 1):
         if number % num == 0:
-            chek = False  # TODO, лучше просто return False
-    return chek # TODO, лучше просто return True
+            return False # TODO, лучше просто return False
+    return True # TODO, лучше просто return True
 
 
 def result_list(object):
