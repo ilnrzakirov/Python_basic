@@ -3,7 +3,7 @@ students = {
         'name': 'Bob',
         'surname': 'Vazovski',
         'age': 23,
-        'interests': ['biology, swimming']
+        'interests': ['biology', 'swimming']
     },
     2: {
         'name': 'Rob',
@@ -20,25 +20,17 @@ students = {
 }
 
 
-def f(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
+def interests (dict):
+    all_interest = []
+    total_len = 0
+    for i_num in dict:
+        student = dict[i_num]
+        all_interest += (student['interests'])
+        total_len += len(student['surname'])
+    return all_interest, total_len
 
+for id, i_age in students.items():
+    age = i_age["age"]
+    print(" ID = {}, возраст - {}".format(id, age))
 
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
-
-
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
-
-# TODO исправить код
+print(interests(students))
