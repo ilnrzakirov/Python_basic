@@ -1,6 +1,7 @@
 import random
 
-def great_list (number_list):
+
+def great_list(number_list):
     number_list1 = []
     number_list2 = []
     cnt = 0
@@ -9,14 +10,16 @@ def great_list (number_list):
             number_list1.append(num)
         else:
             number_list2.append(num)
-        cnt +=1
+        cnt += 1
     result = zip(number_list1, number_list2)
     return result
 
-def great_list2 (num1, num2):
+
+def great_list2(num1, num2):
     return num1, num2
 
-number_list = [random.randint(0, 50) for _ in range (10)]
+
+number_list = [random.randint(0, 50) for _ in range(10)]
 result = list(great_list(number_list))
 print(result)
 
@@ -28,3 +31,5 @@ for i_num, num in enumerate(number_list):
         break
 print(result1)
 print(number_list)
+
+# зачёт!

@@ -20,7 +20,7 @@ students = {
 }
 
 
-def interests (dict):
+def interests(dict):
     all_interest = []
     total_len = 0
     for i_num in dict:
@@ -29,8 +29,11 @@ def interests (dict):
         total_len += len(student['surname'])
     return all_interest, total_len
 
+
 for id, i_age in students.items():
     age = i_age["age"]
     print(" ID = {}, возраст - {}".format(id, age))
 
 print(interests(students))
+
+# зачёт!
