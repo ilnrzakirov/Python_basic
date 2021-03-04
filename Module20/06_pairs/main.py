@@ -24,7 +24,7 @@ result1 = []
 for i_num, num in enumerate(number_list):
     if i_num % 2 == 0:
         result1.append(great_list2(num, number_list[i_num + 1]))
-    if i_num == 6:
+    if i_num == 8:
         break
 print(result1)
 print(number_list)
