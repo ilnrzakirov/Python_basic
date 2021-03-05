@@ -24,8 +24,6 @@ players = {
 #  for key, value in example_dict.items()
 #  далее, можно просто сложить ключ и значение =)
 
-players_list = [item
-                for i_item in players.items()
-                for i in i_item
-                for item in i ]
+players_list = [i_key + i_value
+                for i_key, i_value in players.items()]
 print(players_list)
