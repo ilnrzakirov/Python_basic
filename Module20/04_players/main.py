@@ -19,5 +19,8 @@ players = {
 # TODO, возможно сможем за 1 генератор списков сделать список множеств типа ('Ivan', 'Volkin', 10, 5, 13) ? =)
 #  ПО идее, поправить соввесм немного.
 
-players_list = [item for item in players.items()]
+players_list = [item
+                for i_item in players.items()
+                for i in i_item
+                for item in i ]
 print(players_list)
