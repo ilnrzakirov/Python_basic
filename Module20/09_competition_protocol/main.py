@@ -13,12 +13,4 @@ for i_game in range(1, games +1):
 
 print("Итоги соревнования: ")
 
-for winner in range (1, 4):
-    print("{} место: ".format(winner), end=" ")
-    for name, item in games_result_dict.items():
-
-
-
-
-
 print(games_result_dict)
