@@ -12,6 +12,12 @@ for i_game in range(1, games +1):
         games_result_dict[player] = points, i_game
 
 print("Итоги соревнования: ")
+games_result_list_key = []
+games_result_list_value = []
+for i_key, i_value in games_result_dict.items():
+    games_result_list_key.append(i_key)
+    games_result_list_value.append(i_value)
+print(games_result_list_key, games_result_list_value)
 
 print(games_result_dict)
 
