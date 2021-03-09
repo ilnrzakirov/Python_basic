@@ -14,6 +14,9 @@ for i_game in range(1, games +1):
 print("Итоги соревнования: ")
 games_result_list_value = sorted(ist(games_result_dict.items()))
 
+# TODO, sorted лишняя функция пока что =)
+#  Предлагаю, после того, как создали список, применить к списку метод .sort()
+#  В параметр key метода sort можно добавить параметр сортировки. А так же воспользоваться параметром reverse.
 
 
 
