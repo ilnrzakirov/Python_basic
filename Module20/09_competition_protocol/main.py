@@ -1,3 +1,6 @@
+def keyFunc (item):
+    return int(item[1][0])
+
 games = int(input("Сколько записей вносится в протокол: "))
 games_result_dict = dict()
 
@@ -12,7 +15,12 @@ for i_game in range(1, games +1):
         games_result_dict[player] = points, i_game
 
 print("Итоги соревнования: ")
-games_result_list_value = sorted(ist(games_result_dict.items()))
+games_result_list = list(games_result_dict.items())
+games_result_list.sort(key=keyFunc, reverse=True)
+for winner in range (1, 4):
+    print("{} место. {} {}".format(winner, games_result_list[winner - 1][0], games_result_list[winner-1][1][0]))
+
+print(games_result_list)
 
 # TODO, sorted лишняя функция пока что =)
 #  Предлагаю, после того, как создали список, применить к списку метод .sort()
@@ -23,8 +31,6 @@ games_result_list_value = sorted(ist(games_result_dict.items()))
 # TODO, давайте попробуем создать список без цикла, применив list к games_result_dict.items() =)
 #  После этого, применим в списку функцию для сортировки списка.
 #  И далее используем цикл для вывода значение =)
-
-print(games_result_dict)
 
 # TODO, далее, необходимо создать список списков из ключей и значений словаря games_result_dict.
 #  Поможет функция list и метод словарей items.
