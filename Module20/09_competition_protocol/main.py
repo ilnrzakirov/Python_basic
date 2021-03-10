@@ -16,6 +16,11 @@ for i_game in range(1, games +1):
 
 print("Итоги соревнования: ")
 games_result_list = list(games_result_dict.items())
+
+# TODO, т.к. результат храним в тексте, отсортировали некорректно
+#  5 запись: 197128 qwerty. Должен быть на 1 месте. У нас на первых местах получились игроки с результатом 95715
+# [('Jack', ('95715', 6)), ('qwerty', ('95715', 2)), ('Alex', ('95715', 3)), ('M', ('95715', 9))]
+
 games_result_list.sort(key=keyFunc, reverse=True)
 for winner in range (1, 4):
     print("{} место. {} {}".format(winner, games_result_list[winner - 1][0], games_result_list[winner-1][1][0]))
