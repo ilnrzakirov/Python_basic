@@ -9,10 +9,10 @@ for i_game in range(1, games +1):
     print("{} запись:".format(i_game), end=" ")
     points, player = input().split()
     if player in games_result_dict:
-        if games_result_dict[player][0] < points:
-            games_result_dict[player] = points, i_game
+        if games_result_dict[player][0] < int(points):
+            games_result_dict[player] = int(points), i_game
     else:
-        games_result_dict[player] = points, i_game
+        games_result_dict[player] = int(points), i_game
 
 print("Итоги соревнования: ")
 games_result_list = list(games_result_dict.items())
