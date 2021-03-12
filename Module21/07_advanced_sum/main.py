@@ -6,6 +6,7 @@ def summ (object, result= 0):
             result += item
     return result
 
-
+my_tpl = (1, 2, 3, 4, 5)
 my_list = [1, 2, 3, [5], 8, [1, 2]]
 print(summ(my_list))
+print(summ(my_tpl))
