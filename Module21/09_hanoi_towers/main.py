@@ -1,4 +1,5 @@
 def move (kernel1, kernel2, kernel3, n ):
+    # TODO, цикл лишний. Его у нас заменяет рекурсия.
     for disk in kernel1:
         if disk == 1:
             kernel2.append(disk)
