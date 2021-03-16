@@ -11,7 +11,13 @@ def fibonachi (num_pos, chek = 2, start = 0, res = 1):
     start = res
     return fibonachi(num_pos, chek, start, result)
 
+def fibonachi2 (num_pos):
+    if num_pos == 1 or num_pos == 2:
+        return 1
+    result = fibonachi2(num_pos -2) + fibonachi2(num_pos - 1)
+    return result
+
 num_pos = int(input("Введите номер позиции: "))
 
-print(fibonachi(num_pos))
+print(fibonachi2(num_pos))
 
