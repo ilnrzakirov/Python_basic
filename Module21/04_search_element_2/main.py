@@ -1,7 +1,6 @@
-
-def find_object (search_object, struct, level = 0, chek = 0):
-    # TODO, возможно, выходить стоит если уровень строго меньше максимального
-    if level < chek and level !=0:
+def find_object(search_object, struct, level=0, chek=0):
+    # , возможно, выходить стоит если уровень строго меньше максимального
+    if level < chek and level != 0:
         return None
     if search_object in struct:
         return struct[search_object]
@@ -11,11 +10,12 @@ def find_object (search_object, struct, level = 0, chek = 0):
             result = find_object(search_object, sub_struct, level, chek)
             if result:
                 break
-    # TODO, есть вероятность, что код ниже лишний. Необходимо немного поправить первую часть функции.
+    # , есть вероятность, что код ниже лишний. Необходимо немного поправить первую часть функции.
     else:
-        return  None
+        return None
 
     return result
+
 
 site = {
     'html': {
@@ -30,7 +30,6 @@ site = {
     }
 }
 
-
 level = int(input("Введите уровень (если хотите искать на всех уровнях введите 0: "))
 search_object = input("Что ищем: ")
 value = find_object(search_object, site, level)
@@ -39,6 +38,8 @@ if value:
 else:
     print("Такого ключа в структуре нет")
 
-# TODO Введите уровень (если хотите искать на всех уровнях введите 0: 0
+#  Введите уровень (если хотите искать на всех уровнях введите 0: 0
 #  Что ищем: title
 #  Такого ключа в структуре нет.
+
+# зачёт!

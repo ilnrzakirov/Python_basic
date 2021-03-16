@@ -1,6 +1,6 @@
-def calculating_math_func(data, fact_dict={0 : 1}):
+def calculating_math_func(data, fact_dict={0: 1}):
     result = 1
-    # TODO, возможно условный ператор не нужен =).
+    # , возможно условный ператор не нужен =).
     #   fact_dict лишний параметр.
     if data in fact_dict:
         result = fact_dict[data]
@@ -12,6 +12,9 @@ def calculating_math_func(data, fact_dict={0 : 1}):
     result = result ** 10
     return result
 
-# TODO оптимизировать функцию
 
-print(calculating_math_func(8))
+#  оптимизировать функцию
+
+print(calculating_math_func(5))
+
+# зачёт!
