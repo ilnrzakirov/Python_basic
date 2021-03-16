@@ -1,31 +1,19 @@
 
 def find_object (search_object, struct, level = 0, chek = 0):
     # TODO, возможно, выходить стоит если уровень строго меньше максимального
-    if level == chek:
+    if level < chek and level !=0:
         return None
-    if level == 0:  # TODO, возможно лишняя проверка
-        if search_object in struct:
-            return struct[search_object]
-
+    if search_object in struct:
+        return struct[search_object]
     for sub_struct in struct.values():
         if isinstance(sub_struct, dict):
-            result = find_object(search_object, sub_struct, level=0)
+            chek += 1
+            result = find_object(search_object, sub_struct, level, chek)
             if result:
                 break
     # TODO, есть вероятность, что код ниже лишний. Необходимо немного поправить первую часть функции.
     else:
-        result = None
-    if level != 0 :
-        chek += 1
-        if search_object in struct:
-            return struct[search_object]
-        for sub_struct in struct.values():
-            if isinstance(sub_struct, dict):
-                result = find_object(search_object, sub_struct, level)
-                if result:
-                    break
-        else:
-            return  None
+        return  None
 
     return result
 
