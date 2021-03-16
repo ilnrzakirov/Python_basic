@@ -1,8 +1,7 @@
 def output_num(num):  # , возможно параметр step лишний
     if num == 0:
         return 1
-    print(num)
-    return output_num(num -1)
+    return output_num(num -1), print(num)
 
 # , число пользователя пока что не выводится, но тоже должно =)
 num = int(input("Введите число: "))
