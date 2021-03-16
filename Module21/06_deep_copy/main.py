@@ -10,5 +10,11 @@ site = {
         }
     }
 }
+def constructor (struct, n):
+    for number in range (n):
+        name = input("Введите название продукта для нового сайта: ")
 
+
+n = int(input("Сколько сайтов: "))
+constructor(site, n)
 # TODO здесь писать код
