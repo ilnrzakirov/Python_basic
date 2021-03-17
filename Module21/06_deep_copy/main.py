@@ -12,17 +12,27 @@ site = {
 }
 
 
-def constructor(struct, n):
-    if n == 0:
-        return None
-    name = input("Введите название продукта для нового сайта: ")
-    site["html"]["head"]["title"] = "Куплю/продам {} недорого".format(name)
-    site["html"]["body"]["h2"] = "У нас самая низкая цена на {}".format(name)
-    return print(struct), constructor(struct, n - 1)
+def constructor(struct, name):
+    if "title" in struct.keys():
+        struct["title"] = "Куплю/продам {} недорого".format(name)
+    if "h2" in struct.keys():
+        struct["h2"] = "У нас самая низкая цена на {}".format(name)
+    for item in struct.values():
+        if isinstance(item, dict):
+            constructor(item, name)
 
+def print_struct (struct):
+    for item in struct.items():
+        if isinstance(item, dict):
+            print_struct(item)
+        else:
+            print(item)
 
 n = int(input("Сколько сайтов: "))
-constructor(site, n)
+for _ in range(n):
+    name = input("Введите название продукта для нового сайта: ")
+    constructor(site, name)
+    print_struct(site)
 
 # TODO, необходимо создать вывод структуры новых сайтов для пользователей.
 #  Потребуется функция для
