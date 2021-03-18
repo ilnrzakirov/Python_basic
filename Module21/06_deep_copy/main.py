@@ -13,17 +13,17 @@ site = {
 
 
 def constructor(struct, name, teg):
-    # TODO, предлагаю запускать constructor для каждого тега отдельно.
+    # , предлагаю запускать constructor для каждого тега отдельно.
     #  озможно, потребуется 3 параметра =)
     if teg in struct.keys():
         struct[teg] = "Куплю/продам {} недорого".format(name)
     else:
-    # TODO, идти в цикле предлагаю, если предыдущие условный операторы вернули False.
+    # , идти в цикле предлагаю, если предыдущие условный операторы вернули False.
         for item in struct.values():
             if isinstance(item, dict):
                 constructor(item, name, teg)
     return struct
-    #TODO, в конце возвращаем словарь.
+    #, в конце возвращаем словарь.
 
 def print_struct (struct):
     # TODO, только не item, а key и value =)
@@ -32,11 +32,15 @@ def print_struct (struct):
             # TODO, выводим "ключ" и вызываем рекурсию по значению
             print(key)
             print_struct(value)
+        # TODO, Если не словарь, производим вывод ключа и значения =)
 
 copy_site = site.copy()
 n = int(input("Сколько сайтов: "))
 teg_title = "title"
 teg_h1 = "h1"
+
+# TODO, предлагаю "Куплю/продам {} недорого".format(name) передавать в функию
+# TODO, как и формат для второй строки.
 for _ in range(n):
     name = input("Введите название продукта для нового сайта: ")
     # TODO, работать в функциях предлагаю с копией словаря, а не словарём.
