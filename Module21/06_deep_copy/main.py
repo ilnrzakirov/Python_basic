@@ -32,12 +32,12 @@ def print_struct(struct, n):
     # , только не item, а key и value =)
     for key, value in struct.items():  # Где то здесь ошибка
         # TODO, проверять является ли словарём или нет необходимо значение, а не ключ =)
-        if isinstance(key, dict):  # Правильно так => Если ключ словаря является словарём то...
+        if isinstance(value, dict):  # Правильно так => Если ключ словаря является словарём то...
             # , выводим "ключ" и вызываем рекурсию по значению
-            print("\n", "\t" * n,  key, "\n")
-            print_struct(value, n +4 )
-        # TODO, не хватает блока else.
-        print(key, "\n", "\t" * n, value)  # , Если не словарь,  производим вывод ключа и значения =)
+            print("\t"* n, key)
+            print_struct(value, n +2 )
+        else:# TODO, не хватает блока else.
+            print("\t" * n, key, value)  # , Если не словарь,  производим вывод ключа и значения =)
 
 
 copy_site = site.copy()
