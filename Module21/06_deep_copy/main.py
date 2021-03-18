@@ -31,10 +31,12 @@ def constructor(struct, name, teg):
 def print_struct(struct, n):
     # , только не item, а key и value =)
     for key, value in struct.items():  # Где то здесь ошибка
+        # TODO, проверять является ли словарём или нет необходимо значение, а не ключ =)
         if isinstance(key, dict):  # Правильно так => Если ключ словаря является словарём то...
             # , выводим "ключ" и вызываем рекурсию по значению
             print("\n", "\t" * n,  key, "\n")
             print_struct(value, n +4 )
+        # TODO, не хватает блока else.
         print(key, "\n", "\t" * n, value)  # , Если не словарь,  производим вывод ключа и значения =)
 
 
@@ -52,7 +54,7 @@ for _ in range(n):
     # , работать в функциях предлагаю с копией словаря, а не словарём.
     constructor(copy_site, name_string_title, teg_title)
     constructor(copy_site, name_string_h2, teg_h2)
-    print_struct(copy_site, 0)
+    print_struct(copy_site, 0)  # TODO, возможно, стоит начинать с "1"
 
 # , необходимо создать вывод структуры новых сайтов для пользователей.
 #  Потребуется функция для
