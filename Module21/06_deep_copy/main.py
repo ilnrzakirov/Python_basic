@@ -33,7 +33,7 @@ def print_struct(struct, n):
     for key, value in struct.items():  # Где то здесь ошибка
         if isinstance(key, dict):  # Правильно так => Если ключ словаря является словарём то...
             # , выводим "ключ" и вызываем рекурсию по значению
-            print("\n", "\t" * n,  key)
+            print("\n", "\t" * n,  key, "\n")
             print_struct(value, n +4 )
         print(key, "\n", "\t" * n, value)  # , Если не словарь,  производим вывод ключа и значения =)
 
