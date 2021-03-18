@@ -4,7 +4,7 @@ def move(kernel1, kernel2, kernel3, n):
         return None
     move(kernel1, kernel3, kernel2, n - 1)
     print("Переложить диск {} со стержня {} на стержень {}".format(n, kernel1, kernel3))
-    move(kernel1, kernel2, kernel3, n - 1)
+    move(kernel2, kernel1, kernel3, n - 1)
 
 
 #  цикл лишний. Его у нас заменяет рекурсия.
