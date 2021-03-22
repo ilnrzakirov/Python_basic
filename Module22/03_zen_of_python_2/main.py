@@ -9,7 +9,7 @@ for i_line in zen:
     for i_elem in i_line:
         if i_elem in alfabit:
             sym_count += 1
-            # TODO, для сокращения количества вычислений в коде, предлагаю создать переменную, равную i_elem.lower()
+            # , для сокращения количества вычислений в коде, предлагаю создать переменную, равную i_elem.lower()
             #  И далее, в коде, работать с ней.
             element_line = i_elem.lower()
             if element_line in sym_dict:
@@ -27,3 +27,5 @@ print("Количество слов: ", word_count)
 print("Буква {} встречается меньше остальных, в {} местах".format(sorted_dict[0], sym_dict[sorted_dict[0]]))
 
 zen.close()
+
+# зачёт!

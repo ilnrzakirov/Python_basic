@@ -5,7 +5,7 @@ def save_document(string):
     chek = False
     while chek == False:
         user_path = input("Куда хотите сохранить документ? Введите последовательность папок (через пробел)").split()
-    #    user_path = ["users", "ilnur", "pycharmprojects", "python_basic", "module22", "05_save"]
+        #    user_path = ["users", "ilnur", "pycharmprojects", "python_basic", "module22", "05_save"]
         path = os.path.abspath(os.path.sep)
         for elem in user_path:
             path = os.path.join(path, elem)
@@ -30,6 +30,6 @@ def save_document(string):
 string = "test string"
 save_document(string)
 
-
-# TODO  Обеспечьте контроль ввода: указанный из папок путь должен существовать на диске
+#   Обеспечьте контроль ввода: указанный из папок путь должен существовать на диске
 #  Возможно, потребуется цикл while =)
+# зачёт!
