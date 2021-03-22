@@ -11,10 +11,11 @@ for i_line in zen:
             sym_count += 1
             # TODO, для сокращения количества вычислений в коде, предлагаю создать переменную, равную i_elem.lower()
             #  И далее, в коде, работать с ней.
-            if i_elem.lower() in sym_dict:
-                sym_dict[i_elem.lower()] += 1
+            element_line = i_elem.lower()
+            if element_line in sym_dict:
+                sym_dict[element_line] += 1
             else:
-                sym_dict[i_elem.lower()] = 1
+                sym_dict[element_line] = 1
         if i_elem == " ":
             word_count += 1
 
