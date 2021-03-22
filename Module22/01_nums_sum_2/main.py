@@ -9,6 +9,7 @@ for i_line in input_file:
 answer = open("answer.txt", "w")
 answer.write(str(res_num))
 
-
 input_file.close()
 answer.close()
+
+# зачёт!

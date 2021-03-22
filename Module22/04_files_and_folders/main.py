@@ -1,6 +1,7 @@
 import os
 
-def struct_dir (path, file_count = 0, all_size =0 ):
+
+def struct_dir(path, file_count=0, all_size=0):
     for i_elem in os.listdir(path):
         path_fld = os.path.join(path, i_elem)
         if os.path.isfile(path_fld):
@@ -11,9 +12,10 @@ def struct_dir (path, file_count = 0, all_size =0 ):
     return file_count, all_size
 
 
-path =os.path.abspath(os.path.join("..", "..", "Module14"))
+path = os.path.abspath(os.path.join("..", "..", "Module14"))
 print(path)
 print("Количество подкаталогов: ", len(os.listdir(path)))
 file_count, all_size = struct_dir(path)
 print("Количество файлов: {} \nРазмер каталога в(Кб): {}".format(file_count, all_size))
 
+# зачёт!

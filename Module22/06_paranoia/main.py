@@ -1,11 +1,13 @@
 import os
 
-def chiper (text, shift):
+
+def chiper(text, shift):
     char_list = [(alphabet[(alphabet.index(sym) + shift) % 26] if sym != "\n" else sym) for sym in text.lower()]
     new_text = ''
     for i_char in char_list:
         new_text += i_char
     return new_text
+
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 my_text_file = open("text.txt", 'r')
@@ -19,3 +21,5 @@ for i_line in my_text_file:
 
 my_text_file.close()
 chipe_text.close()
+
+# зачёт!
