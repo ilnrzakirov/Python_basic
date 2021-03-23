@@ -26,8 +26,8 @@ for name, value in sym_dict.items():
     else:
         # TODO, последующие 2 действия предлагаю объединить в одно. Мы же можем создавать значение
         #  как список из 1 элемента =)
-        share_dict[round_share] = []
-        share_dict[round_share].append(name)
+        share_dict[round_share] = [name]
+#        share_dict[round_share].append(name)
 
 # Сортировка значений словаря share_dict
 for key, value in share_dict.items():
@@ -42,8 +42,7 @@ for key, value in share_dict.items():
     for item in value:
         # TODO, запись в файл возможно стоит сделать без дополнительной переменной
         #  При помощи форматирования строк =)
-        write_string = item + " " + str(key) + "\n"
-        analysis_file.write(write_string)
+        analysis_file.write(f"{item} {str(key)} \n")
 
 input_text.close()
 analysis_file.close()
