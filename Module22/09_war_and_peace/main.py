@@ -17,12 +17,16 @@ for i_line in text_document:
                 sym_dict[sym] = 1
 
 # Составление перевернутого словаря
+# TODO, для сортировки словаря, предлагаю создать список из ключею и значений
+#  и применить к нему списковый метод sort(). Получится всего 2 строки кода =)
 share_dict = dict()
 for name, value in sym_dict.items():
     share = value
     if share in share_dict:
         share_dict[share].append(name)
     else:
+        # TODO, последующие 2 действия предлагаю объединить в одно. Мы же можем создавать значение
+        #  как список из 1 элемента =)
         share_dict[share] = []
         share_dict[share].append(name)
 
@@ -40,6 +44,8 @@ analysis_file = open("analysis.txt", "a", encoding="UTF-8")
 # Запись результатов в файл
 for key, value in sorted_share_dict.items():
     for item in value:
+        # TODO, запись в файл возможно стоит сделать без дополнительной переменной
+        #  При помощи форматирования строк =)
         write_string = item + " " + str(key) + "\n"
         analysis_file.write(write_string)
 

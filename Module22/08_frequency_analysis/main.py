@@ -24,6 +24,8 @@ for name, value in sym_dict.items():
     if round_share in share_dict:
         share_dict[round_share].append(name)
     else:
+        # TODO, последующие 2 действия предлагаю объединить в одно. Мы же можем создавать значение
+        #  как список из 1 элемента =)
         share_dict[round_share] = []
         share_dict[round_share].append(name)
 
@@ -38,6 +40,8 @@ analysis_file = open("analysis.txt", "a")
 # Запись результатов в файл
 for key, value in share_dict.items():
     for item in value:
+        # TODO, запись в файл возможно стоит сделать без дополнительной переменной
+        #  При помощи форматирования строк =)
         write_string = item + " " + str(key) + "\n"
         analysis_file.write(write_string)
 
