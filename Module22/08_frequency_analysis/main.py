@@ -2,6 +2,7 @@ input_text = open("text.txt", "r")
 alfabit = "abcdefghijklmnopqrstuvwxyz"
 sym_dict = dict()
 
+# Составление словаря с количестовом букв в тексте
 for i_line in input_text:
     for sym in i_line.lower():
         if sym in alfabit:
@@ -11,8 +12,10 @@ for i_line in input_text:
                 sym_dict[sym] = 1
 
 all_sym = 0
+# Нахождение общего количества букв
 for value in sym_dict.values():
     all_sym += value
+# Составление словаря ключ - очки, значение - буквы
 share_dict = dict()
 for name, value in sym_dict.items():
     share = value / all_sym
@@ -24,6 +27,7 @@ for name, value in sym_dict.items():
         share_dict[round_share] = []
         share_dict[round_share].append(name)
 
+# Сортировка значений словаря share_dict
 for key, value in share_dict.items():
     share_dict[key] = sorted(value)
 
@@ -31,6 +35,7 @@ print(share_dict)
 print(sym_dict)
 analysis_file = open("analysis.txt", "a")
 
+# Запись результатов в файл
 for key, value in share_dict.items():
     for item in value:
         write_string = item + " " + str(key) + "\n"
