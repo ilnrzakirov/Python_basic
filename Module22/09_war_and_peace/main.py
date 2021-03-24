@@ -26,7 +26,6 @@ for i_line in text_document:
 
 sym_list = list(sym_dict.items())
 sym_list.sort(key=operator.itemgetter(1, 0))
-print(sym_list)
 
 analysis_file = open("analysis.txt", "a", encoding="UTF-8")
 
