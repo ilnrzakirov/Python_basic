@@ -1,4 +1,6 @@
 import zipfile
+
+import operator
 # Распаковка и открытие файла
 voyna_i_mir = zipfile.ZipFile("voyna-i-mir.zip", "r")
 voyna_i_mir.printdir()
@@ -15,37 +17,24 @@ for i_line in text_document:
                 sym_dict[sym] += 1
             else:
                 sym_dict[sym] = 1
-
 # Составление перевернутого словаря
 # TODO, для сортировки словаря, предлагаю создать список из ключею и значений
 #  и применить к нему списковый метод sort(). Получится всего 2 строки кода =)
-share_dict = dict()
-for name, value in sym_dict.items():
-    share = value
-    if share in share_dict:
-        share_dict[share].append(name)
-    else:
         # TODO, последующие 2 действия предлагаю объединить в одно. Мы же можем создавать значение
         #  как список из 1 элемента =)
-        share_dict[share] = [name]
 
-# Сортировка словаря
-key_sorted = sorted(share_dict)
-sorted_share_dict = dict()
-for key in key_sorted:
-    sorted_share_dict[key] = share_dict[key]
 
-for key, value in sorted_share_dict.items():
-    sorted_share_dict[key] = sorted(value)
+sym_list = list(sym_dict.items())
+sym_list.sort(key=operator.itemgetter(1, 0))
+print(sym_list)
 
 analysis_file = open("analysis.txt", "a", encoding="UTF-8")
 
 # Запись результатов в файл
-for key, value in sorted_share_dict.items():
-    for item in value:
+for item in sym_list:
         # TODO, запись в файл возможно стоит сделать без дополнительной переменной
         #  При помощи форматирования строк =)
-        analysis_file.write(f"{item} {str(key)} \n")
+    analysis_file.write(f"{item[0]} {str(item[1])} \n")
 
 analysis_file.close()
 text_document.close()
