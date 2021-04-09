@@ -1,5 +1,5 @@
 total_sym = 0
-line_count =0
+line_count = 0
 
 try:
     people_name = open("people.txt", "r", encoding="UTF-8")
@@ -12,11 +12,13 @@ try:
         if len_line < 3:
             error = "Длина {} строки меньше трех символов \n".format(line_count)
             errors.write(error)
-            raise BaseException ("Длина {} строки меньше трех символов".format(line_count))
+            raise BaseException("Длина {} строки меньше трех символов".format(line_count))  # TODO, возможно, лучше использовать Exception
         total_sym += len_line
     people_name.close()
 except FileNotFoundError:
-    errors.write("Файл не найден")
+    errors.write("Файл не найден")  # TODO, если файл открыть не смогли, то записать в него тоже не сможем.
     print("Файл не найден")
 finally:
     print("Количество символов: {}".format(total_sym))
+
+# TODO, если получили ошибку, код не должен прекратить работу.
