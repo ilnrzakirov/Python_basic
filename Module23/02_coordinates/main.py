@@ -6,19 +6,14 @@ def f(x, y):
     y += random.randint(0, 5)
     # TODO, в наших функциях не нужно вызывать исключения.
     #  Выпадут сами, если делитель будет равен "0"
-    try:
-        return x / y
-    except ZeroDivisionError:
-        print("в f: на ноль делить нельзя")
+    return x / y
 
 
 def f2(x, y):
     x -= random.randint(0, 10)
     y -= random.randint(0, 5)
-    try:
-        return y / x
-    except ZeroDivisionError:
-        print("в f2: на ноль делить нельзя")
+    return y / x
+
 
 
 try:
@@ -33,12 +28,12 @@ try:
             raise ("result.txt закрыт")
         my_list = sorted([res1, res2, number])
         file_2.write("{} \n".format(' '.join(str(my_list))))
-except FileNotFoundError:
-    print("Что-то пошло не так")
-finally:
-    # TODO, если при открытии файла поймаем ошибку, в таком случае получим ошибку в этом месте.
-    #  Возможно лучше закрывать файл тоже в блоке try.
     file.close()
     file_2.close()
+except FileNotFoundError:
+    print("Что-то пошло не так")
+    # TODO, если при открытии файла поймаем ошибку, в таком случае получим ошибку в этом месте.
+    #  Возможно лучше закрывать файл тоже в блоке try.
+
 
 #  отредактировать и исправить программу
