@@ -12,12 +12,14 @@ try:
         if len_line < 3:
             error = "Длина {} строки меньше трех символов \n".format(line_count)
             errors.write(error)
-            raise Exception("Длина {} строки меньше трех символов".format(line_count))  # TODO, возможно, лучше использовать Exception
+            raise Exception  # TODO, возможно, лучше использовать Exception
         total_sym += len_line
     people_name.close()
 except FileNotFoundError:
     errors.write("Файл people.txt не найден")  # TODO, если файл открыть не смогли, то записать в него тоже не сможем.
     print("Файл people.txt не найден")
+except Exception:
+    print("Длина {} строки меньше трех символов".format(line_count))
 finally:
     print("Количество символов: {}".format(total_sym))
 
