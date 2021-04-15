@@ -3,8 +3,10 @@ line_count = 0
 people_name = open("people.txt", "r", encoding="UTF-8")
 errors = open("errors.log", "a", encoding="UTF-8")
 try:
- # TODO, создавать/открывать файл для записи ошибок предлагаю до блока try/except.
+ # , создавать/открывать файл для записи ошибок предлагаю до блока try/except.
     for i_line in people_name:
+        # TODO, стоит ловить ошибки внутри цикла. Иначе, если в цикле возникает ошибка,
+        #  Из цикла выходим.
         len_line = len(i_line)
         line_count += 1
         if i_line.endswith("\n"):
