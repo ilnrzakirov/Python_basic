@@ -1,5 +1,17 @@
 text_file = open("calc.txt")
 
+def calc (operand_1, operation, operand_2):
+    if operation == "+":
+        result = float(operand_1) + float(operand_2)
+    if operation == "-":
+        result = float(operand_1) - float(operand_2)
+    if operation == "*":
+        result = float(operand_1) * float(operand_2)
+    if operation == "/":
+        result = float(operand_1) / float(operand_2)
+    if operation == "%":
+        result = float(operand_1) % float(operand_2)
+    print("Результат: {}".format(result))
 
 def is_number(string):
     try:
@@ -7,6 +19,14 @@ def is_number(string):
         return True
     except ValueError:
         return False
+
+def chek_data (i_line):
+    if i_line.split != 3:
+        raise ValueError ("Что-то не так с уровнением")
+    if operation not in all_operation:
+        raise ValueError ("operation не является символами +, -, *, /, %")
+    if is_number(operand_1) == False or is_number(operand_2) == False:
+        raise BaseException ("Использовать можно только цифры")
 
 
 for i_line in text_file:
@@ -36,6 +56,7 @@ for i_line in text_file:
         result = float(operand_1) % float(operand_2)
     print("Результат: {}".format(result))
 
+#Z Я не понял как ловить ошибки в основной программе из функций
 # TODO, Предлагаю оптимизировать код в текущей программе, нам потребуется 2 функции.
 #  1. для проверки корректности данных и вызова исключения, если данные не корректные.
 #  2. для произведения действий, если данные корректные.
