@@ -1,9 +1,9 @@
 total_sym = 0
 line_count = 0
-
+people_name = open("people.txt", "r", encoding="UTF-8")
+errors = open("errors.log", "a", encoding="UTF-8")
 try:
-    people_name = open("people.txt", "r", encoding="UTF-8")
-    errors = open("errors.log", "a", encoding="UTF-8")  # TODO, создавать/открывать файл для записи ошибок предлагаю до блока try/except.
+ # TODO, создавать/открывать файл для записи ошибок предлагаю до блока try/except.
     for i_line in people_name:
         len_line = len(i_line)
         line_count += 1
@@ -15,9 +15,6 @@ try:
             raise Exception  # , возможно, лучше использовать Exception
         total_sym += len_line
     people_name.close()
-except FileNotFoundError:
-    errors.write("Файл people.txt не найден")  # TODO, если файл открыть не смогли, то записать в него тоже не сможем.
-    print("Файл people.txt не найден")
 except Exception:
     print("Длина {} строки меньше трех символов".format(line_count))
 finally:
