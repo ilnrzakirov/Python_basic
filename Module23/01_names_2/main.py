@@ -3,7 +3,7 @@ line_count = 0
 
 try:
     people_name = open("people.txt", "r", encoding="UTF-8")
-    errors = open("errors.log", "a", encoding="UTF-8")
+    errors = open("errors.log", "a", encoding="UTF-8")  # TODO, создавать/открывать файл для записи ошибок предлагаю до блока try/except.
     for i_line in people_name:
         len_line = len(i_line)
         line_count += 1
@@ -12,7 +12,7 @@ try:
         if len_line < 3:
             error = "Длина {} строки меньше трех символов \n".format(line_count)
             errors.write(error)
-            raise Exception  # TODO, возможно, лучше использовать Exception
+            raise Exception  # , возможно, лучше использовать Exception
         total_sym += len_line
     people_name.close()
 except FileNotFoundError:
