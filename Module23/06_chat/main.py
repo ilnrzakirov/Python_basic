@@ -8,14 +8,14 @@ while True:
     try:
         # TODO, т.к. ввод пользователя всегда текст, предлагаю не приводить ввод пользователя к int
         #  и сравнивать с числом в текстовом формате.
-        if int(answer) == 1:
+        if answer == "1":
             text_file.seek(0)
             for i_line in text_file.readlines():
                 print(i_line)
-        if int(answer) == 2:
+        if answer == "2":
             message = input("Введите сообщение: ")
             text_file.write('{}: {} \n'.format(user, message))
-        if int(answer) != 1 and int(answer) != 2:
+        if answer != "1" and answer != "2":
             raise ValueError
     except ValueError:
         print("Такого варианта собыйтий нет")
