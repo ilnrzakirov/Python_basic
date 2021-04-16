@@ -13,18 +13,18 @@ for i_line in people_name:
         if i_line.endswith("\n"):
             len_line -= 1
         if len_line < 3:
-            # TODO, записывать ошибки в файл предлагаю в блоке except
-            error = "Длина {} строки меньше трех символов \n".format(line_count)
-            errors.write(error)
+            #  записывать ошибки в файл предлагаю в блоке except
             raise Exception  # , возможно, лучше использовать Exception
         total_sym += len_line
 
     except Exception:
+        error = "Длина {} строки меньше трех символов \n".format(line_count)
+        errors.write(error)
         print("Длина {} строки меньше трех символов".format(line_count))
-    finally:
-        print("Количество символов: {}".format(total_sym))
-        # TODO, таким образом файл закрывается после первой итерации цикла, но не должен.
-
-        people_name.close()
+#    finally:
+#        print("Количество символов: {}".format(total_sym))
+        # таким образом файл закрывается после первой итерации цикла, но не должен.
+print("Количество символов: {}".format(total_sym))
+people_name.close()
 
 # , если получили ошибку, код не должен прекратить работу.
