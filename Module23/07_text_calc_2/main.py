@@ -29,26 +29,30 @@ def chek_data (i_line, count):
     if is_number(operand_1) == False or is_number(operand_2) == False:
         raise BaseException ("Использовать можно только цифры")
     if len(operation) > 1:
-        print("Обнаружена ошибка в строке {} {} желаете исправить?: ".format(count, i_line))
-        answer = input().lower()
-        if answer == "да":
-            corrected = input("Введите исправленную версию: ")
-            try:
-                operand_1, operation, operand_2 = corrected.split()
-            except ValueError:
-                print("Что то не так с уровнением")
-        if answer == "нет":
-            raise ValueError ("Некорректные данные")
+        raise SyntaxError
+
 
 all_operation = "+-/%*"
 count = 0
 for i_line in text_file:
     count +=1
     try:
-        chek_data(i_line)
+        chek_data(i_line, count)
         operand_1, operation, operand_2 = i_line.split()
         calc(operand_1, operation, operand_2)
-    except (ValueError, BaseException):
-        print("Что то не то с уровнением")
+#    except (ValueError, BaseException):
+#        print("Что то не то с уровнением")
+    except (SyntaxError, ValueError, BaseException):
+        print("Обнаружена ошибка в строке {} {} желаете исправить?: ".format(count, i_line))
+        answer = input().lower()
+        if answer == "да":
+            corrected = input("Введите исправленную версию: ")
+            try:
+                operand_1, operation, operand_2 = corrected.split()
+                calc(operand_1, operation, operand_2)
+            except ValueError:
+                print("Что то не так с уровнением")
+        if answer == "нет":
+            continue
         # TODO, если ошибка, спрашиваем, хочет ли пользователь её исправить и производим действия снова =)
 
