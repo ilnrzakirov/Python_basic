@@ -1,4 +1,3 @@
-
 text_file = open("chat.txt", "a+", encoding="UTF-8")
 
 user = input("Введите имя пользователя: ")
@@ -20,3 +19,4 @@ while True:
     except ValueError:
         print("Такого варианта собыйтий нет")
 
+# зачёт!
