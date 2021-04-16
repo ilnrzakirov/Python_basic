@@ -8,17 +8,18 @@ def calc(operand_1, operation, operand_2):
 
     # TODO, для улучшения читаемости кожа, возможно, стоит привести operand_1 и operand_2
     #  заранее к float, таким образов, у условном операторе float уберём =)
-
+    operand_1 = float(operand_1)
+    operand_2 = float(operand_2)
     if operation == "+":
-        result = float(operand_1) + float(operand_2)
+        result = operand_1 + operand_2
     elif operation == "-":
-        result = float(operand_1) - float(operand_2)
+        result = operand_1 - operand_2
     elif operation == "*":
-        result = float(operand_1) * float(operand_2)
+        result = operand_1 * operand_2
     elif operation == "/":
-        result = float(operand_1) / float(operand_2)
+        result = operand_1 / operand_2
     elif operation == "%":
-        result = float(operand_1) % float(operand_2)
+        result = operand_1 % operand_2
     return result
     # , функция должна возвращать результат вычислений.
     #  т.к. в итоге, нам необходимо получить сумму всех результатов.
@@ -51,9 +52,9 @@ for i_line in text_file:
         chek_data(i_line)
         operand_1, operation, operand_2 = i_line.split()
         calc(operand_1, operation, operand_2)
-    except (ValueError, Exception):
+    except (ValueError, Exception) as err:
         # TODO, предлагаю добавить синоним "as err" и выводить тип ошибки и строку.
-        print("Что то не то с уровнением")
+        print("Что то не то с уровнением {}".format(err))
 
 # Z Я не понял как ловить ошибки в основной программе из функций
 # , Предлагаю оптимизировать код в текущей программе, нам потребуется 2 функции.
