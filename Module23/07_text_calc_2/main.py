@@ -1,6 +1,7 @@
 text_file = open("calc.txt")
 
-def calc (operand_1, operation, operand_2):
+
+def calc(operand_1, operation, operand_2):
     operand_1 = float(operand_1)
     operand_2 = float(operand_2)
     if operation == "+":
@@ -15,6 +16,7 @@ def calc (operand_1, operation, operand_2):
         result = operand_1 % operand_2
     print("Результат: {}".format(result))
 
+
 def is_number(string):
     try:
         float(string)
@@ -22,14 +24,15 @@ def is_number(string):
     except ValueError:
         return False
 
-def chek_data (i_line):
+
+def chek_data(i_line):
     if len(i_line.split()) != 3:
-        raise ValueError ("Что-то не так с уровнением")
+        raise ValueError("Что-то не так с уровнением")
     operand_1, operation, operand_2 = i_line.split()
     if operation not in all_operation:
-        raise ValueError ("operation не является символами +, -, *, /, %")
-    if is_number(operand_1) == False or is_number(operand_2) == False:
-        raise Exception ("Использовать можно только цифры")
+        raise ValueError("operation не является символами +, -, *, /, %")
+    if is_number(operand_1) == False or is_number(operand_2) == False:  # Лучше "is is_number(operand_1)"
+        raise Exception("Использовать можно только цифры")
     if len(operation) > 1:
         raise SyntaxError
 
@@ -37,13 +40,13 @@ def chek_data (i_line):
 all_operation = "+-/%*"
 count = 0
 for i_line in text_file:
-    count +=1
+    count += 1
     try:
         chek_data(i_line)
         operand_1, operation, operand_2 = i_line.split()
         calc(operand_1, operation, operand_2)
-#    except (ValueError, BaseException):
-#        print("Что то не то с уровнением")
+    #    except (ValueError, BaseException):
+    #        print("Что то не то с уровнением")
     except (SyntaxError, ValueError, Exception):
         print("Обнаружена ошибка в строке {} {} желаете исправить?: ".format(count, i_line))
         answer = input().lower()
@@ -58,3 +61,4 @@ for i_line in text_file:
 
         # , если ошибка, спрашиваем, хочет ли пользователь её исправить и производим действия снова =)
 
+# зачёт!
