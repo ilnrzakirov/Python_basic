@@ -54,8 +54,7 @@ for i_line in text_file:
                 calc(operand_1, operation, operand_2)
             except ValueError:
                 print("Что то не так с уровнением")
-        # TODO, условие получилось лишним =)
-        if answer == "нет":
-            continue
+        # , условие получилось лишним =)
+
         # , если ошибка, спрашиваем, хочет ли пользователь её исправить и производим действия снова =)
 
