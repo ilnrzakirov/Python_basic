@@ -19,7 +19,7 @@ def chek(data):
 
 registration_file = open("registrations.txt", "r", encoding="UTF-8")
 registrations_good = open("registrations_good.log", "a", encoding="UTF-8")
-registrations_bad = open("registrations_bad.log", "a", encoding="UTF-8")
+registrations_bad = open("registrations_bad.txt", "a", encoding="UTF-8")
 for i_line in registration_file:
     # , ловить ошибки и записывать их в файл предлагаю в основном цикле нашей программы.
     #  В этом месте. Но вызывать внутри функции.
@@ -27,10 +27,10 @@ for i_line in registration_file:
     try:
         chek(i_line)
         registrations_good.write(i_line)
-    except (ValueError, NameError, SyntaxError):
+    except (ValueError, NameError, SyntaxError) as err:
         # TODO, предлагаю добавить синоним "as err" и записывать в файл не только строку, но и тип ошибки.
         #  Возможно, стоит добавить символ переноса строки при записи.
-        registrations_bad.write(i_line)
+        registrations_bad.write("{}:{}".format(err, i_line))
 
 
 
