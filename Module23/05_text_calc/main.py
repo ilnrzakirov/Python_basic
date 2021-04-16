@@ -21,40 +21,24 @@ def is_number(string):
         return False
 
 def chek_data (i_line):
-    if i_line.split != 3:
+    if len(i_line.split()) != 3:
         raise ValueError ("Что-то не так с уровнением")
+    operand_1, operation, operand_2 = i_line.split()
     if operation not in all_operation:
         raise ValueError ("operation не является символами +, -, *, /, %")
     if is_number(operand_1) == False or is_number(operand_2) == False:
         raise BaseException ("Использовать можно только цифры")
 
-
+all_operation = "+-/%*"
 for i_line in text_file:
     try:
+        chek_data(i_line)
         operand_1, operation, operand_2 = i_line.split()
-    except ValueError:
-        print("Что то не так с уровнением")
-    all_operation = "+-/%*"
-    try:
-        if operation not in all_operation:
-            raise ValueError
-        if is_number(operand_1) == False or is_number(operand_2) == False:
-            raise BaseException
-    except ValueError:
-        print("operation не является символами +, -, *, /, %")
-    except BaseException:
-        print("Использовать можно только цифры")
-    if operation == "+":
-        result = float(operand_1) + float(operand_2)
-    if operation == "-":
-        result = float(operand_1) - float(operand_2)
-    if operation == "*":
-        result = float(operand_1) * float(operand_2)
-    if operation == "/":
-        result = float(operand_1) / float(operand_2)
-    if operation == "%":
-        result = float(operand_1) % float(operand_2)
-    print("Результат: {}".format(result))
+        calc(operand_1, operation, operand_2)
+    except (ValueError, BaseException):
+        print("Что то не то с уровнением")
+
+
 
 #Z Я не понял как ловить ошибки в основной программе из функций
 # TODO, Предлагаю оптимизировать код в текущей программе, нам потребуется 2 функции.
