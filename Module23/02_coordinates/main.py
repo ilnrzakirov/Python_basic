@@ -36,10 +36,13 @@ for line in file:
     except:
         print("Ошибка в функции f2")
     number = random.randint(0, 100)
-    # TODO, было бы здорово поймать и эту ошибку =)
+    #  было бы здорово поймать и эту ошибку =)
     #  NameError: name 'res1' is not defined
     #  Возникает, если одна из функций возвращает ошибку.
-    my_list = sorted([res1, res2, number])
+    try:
+        my_list = sorted([res1, res2, number])
+    except NameError:
+        print("Что то пошло не так")
     file_2.write("{} \n".format(' '.join(str(my_list))))
 file.close()
 file_2.close()
