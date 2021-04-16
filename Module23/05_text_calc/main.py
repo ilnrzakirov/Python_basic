@@ -1,6 +1,9 @@
 text_file = open("calc.txt")
 
 def calc (operand_1, operation, operand_2):
+    # TODO Решено правильно, но, давайте объединим условные операторы if в один с помощью блоков elif/else.
+    #  Каждый условный оператор if это новая проверка, которая производится всегда.
+    #  В то время, как блоки elif и else могут и не наступить.
     if operation == "+":
         result = float(operand_1) + float(operand_2)
     if operation == "-":
@@ -12,7 +15,10 @@ def calc (operand_1, operation, operand_2):
     if operation == "%":
         result = float(operand_1) % float(operand_2)
     print("Результат: {}".format(result))
+    # TODO, функция должна возвращать результат вычислений.
+    #  т.к. в итоге, нам необходимо получить сумму всех результатов.
 
+# TODO, лишняя функция. При помощи какого строкового метода можно узнать, является ли строка числом?
 def is_number(string):
     try:
         float(string)
@@ -26,8 +32,10 @@ def chek_data (i_line):
     operand_1, operation, operand_2 = i_line.split()
     if operation not in all_operation:
         raise ValueError ("operation не является символами +, -, *, /, %")
-    if is_number(operand_1) == False or is_number(operand_2) == False:
+    if is_number(operand_1) == False or is_number(operand_2) == False:  # TODO вместо "== False", лучше использовать "not"
         raise BaseException ("Использовать можно только цифры")
+        # TODO BaseException - внутренняя ошибка python. Уровнем выше есть Exception.
+        #  Предлагаю вызывать именно Exception, PyCharm не будет ругаться =)
 
 all_operation = "+-/%*"
 for i_line in text_file:

@@ -50,4 +50,5 @@ for i_line in text_file:
         calc(operand_1, operation, operand_2)
     except (ValueError, BaseException):
         print("Что то не то с уровнением")
+        # TODO, если ошибка, спрашиваем, хочет ли пользователь её исправить и производим действия снова =)
 
