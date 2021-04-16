@@ -6,15 +6,15 @@ def calc (operand_1, operation, operand_2):
     #  В то время, как блоки elif и else могут и не наступить.
     if operation == "+":
         result = float(operand_1) + float(operand_2)
-    if operation == "-":
+    elif operation == "-":
         result = float(operand_1) - float(operand_2)
-    if operation == "*":
+    elif operation == "*":
         result = float(operand_1) * float(operand_2)
-    if operation == "/":
+    elif operation == "/":
         result = float(operand_1) / float(operand_2)
-    if operation == "%":
+    elif operation == "%":
         result = float(operand_1) % float(operand_2)
-    print("Результат: {}".format(result))
+    return result
     # TODO, функция должна возвращать результат вычислений.
     #  т.к. в итоге, нам необходимо получить сумму всех результатов.
 
@@ -32,8 +32,8 @@ def chek_data (i_line):
     operand_1, operation, operand_2 = i_line.split()
     if operation not in all_operation:
         raise ValueError ("operation не является символами +, -, *, /, %")
-    if is_number(operand_1) == False or is_number(operand_2) == False:  # TODO вместо "== False", лучше использовать "not"
-        raise BaseException ("Использовать можно только цифры")
+    if not is_number(operand_1) or not is_number(operand_2):  # TODO вместо "== False", лучше использовать "not"
+        raise Exception ("Использовать можно только цифры")
         # TODO BaseException - внутренняя ошибка python. Уровнем выше есть Exception.
         #  Предлагаю вызывать именно Exception, PyCharm не будет ругаться =)
 
@@ -43,7 +43,7 @@ for i_line in text_file:
         chek_data(i_line)
         operand_1, operation, operand_2 = i_line.split()
         calc(operand_1, operation, operand_2)
-    except (ValueError, BaseException):
+    except (ValueError, Exception):
         print("Что то не то с уровнением")
 
 
