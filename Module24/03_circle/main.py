@@ -24,10 +24,8 @@ class Circle:
             suum_radius = self.radius + object.radius
             difference = self.radius - object.radius
             distans = math.sqrt((self.x - object.x) ** 2 + (self.y - object.y) ** 2)
-            if difference < distans < suum_radius:  # Можно сразу возвращать результат сравнения "return difference < distans < suum_radius"
-                return True
-            else:
-                return False
+            return difference < distans < suum_radius  # Можно сразу возвращать результат сравнения "return difference < distans < suum_radius"
+
 
 
 circle1 = Circle(0, 0, 1)

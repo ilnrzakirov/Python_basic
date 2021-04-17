@@ -24,7 +24,7 @@ while unit_1.health > 0 and unit_2.health > 0:
     if remains == 1:
         unit_1.attack(unit_2)
         print("Атаковал {}, у противника осталось {} очков жизни".format(unit_1.warrior_name, unit_2.health))
-    if remains == 2:  # только лучше elif =) Тогда будет одна проверка в некоторых случаях. Сейчас всегда 2
+    elif remains == 2:  # только лучше elif =) Тогда будет одна проверка в некоторых случаях. Сейчас всегда 2
         unit_2.attack(unit_1)
         print("Атаковал {}, у противника осталось {} очков жизни".format(unit_2.warrior_name, unit_1.health))
 
