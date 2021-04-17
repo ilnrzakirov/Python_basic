@@ -6,6 +6,9 @@ class Warrior:
         self.warrior_name = name
         self.health = 100
 
+# TODO, у воина должен быть метод.
+#  На вход метод должен принимать второго война и проверять, воин ли он.
+#  Если да, то сокращать количество его health.
 
 unit_1 = Warrior("Unit1")
 unit_2 = Warrior("Unit2")
