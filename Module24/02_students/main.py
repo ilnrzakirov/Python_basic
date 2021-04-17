@@ -1,6 +1,7 @@
 import random
 import operator
 
+
 class Student:
 
     def __init__(self, name):
@@ -13,11 +14,12 @@ class Student:
         print("Имя: {}, номер группы: {}, успеваемость {}".format(
             self.name, self.group_number, self.educational_performance))
 
-    def sort_performance (self):
+    def sort_performance(self):
         result = 0
         for item in self.educational_performance:
             result += item
         return result
+
 
 students = list()
 for name in range(1, 11):
@@ -28,4 +30,4 @@ students.sort(key=operator.attrgetter("average_rating"))
 for item in students:
     item.info()
 
-
+# зачёт!
