@@ -2,6 +2,7 @@ import random
 
 all_card = ["T", "K", "D", "V", 10, 9, 8, 7, 6, 5, 4, 3, 2]
 
+
 class Card:
 
     def __init__(self):
@@ -43,6 +44,7 @@ class Player:
         for card in self.player_card:
             card.info()
 
+
 user_1 = Player("user_1")
 computer = Player("computer")
 
@@ -76,3 +78,5 @@ while True:
         else:
             print("Ничья")
             break
+
+# зачёт!

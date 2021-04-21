@@ -14,7 +14,7 @@ class Potate:
         print("Картошка {} сейчас {}".format( self.index, Potate.states[self.state]))
 
     def is_right(self):
-        if self.state == 3:
+        if self.state == 3:  # TODo, можно просто return self.state == 3.
             return True
         return False
 
@@ -31,6 +31,7 @@ class PotateGarden:
                 i_potate.grow()
 
     def are_all_right(self):
+        # TODO, цикл получился лишний =)
         for i_potate in self.potates:
             if not all(i_potate.is_right() for i_potate in self.potates):
                 print("Кортошка еще не созрела")
@@ -48,10 +49,12 @@ class Gardener:
         self.harvest = []
 
     def grooming(self, garden):
+        # TODO, предлагаю убрать параметр garden и обращаться сразу к своему саду.
         if isinstance(garden, PotateGarden):
             garden.grooming = True
 
     def harvest_crops(self, garden):
+        # TODO, предлагаю убрать параметр garden и обращаться сразу к своему саду.
         if isinstance(garden, PotateGarden):
             if garden.are_all_right():
                 self.harvest.append(garden.potates)
@@ -71,3 +74,7 @@ for _ in range (3):
         gardener.harvest_crops(my_garden)
 
 gardener.info()
+
+# TODO, если картошка созрела, то на грядке её остаться не должно.
+#  Пока что остаётся.
+print(gardener.garden.potates)

@@ -3,6 +3,10 @@ class Wather:
     def __init__(self):
         self.name = "wather"
 
+    # TODO, предлагаю описать метод __str__.
+    #  И попробовать возвращать в нём имя элемента.
+    #  В таком случае при использовании print будет выводится именно имя элемента, а не его техническое обозначение в памяти =)
+
     def __add__(self, other):
         if isinstance(other, Air):
             return Storm
@@ -28,6 +32,7 @@ class Ground:
             return Lava
         else:
             return None
+
 
 class Fire:
 
@@ -60,20 +65,26 @@ class Air:
         else:
             return None
 
+
 class Storm:
     name = "storm"
+
 
 class Steam:
     name = "steam"
 
+
 class Dirt:
     name = "dirt"
+
 
 class Lightning:
     name = "lightning"
 
+
 class Dust:
     name = "dust"
+
 
 class Lava:
     name = "lava"

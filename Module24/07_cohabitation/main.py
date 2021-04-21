@@ -1,5 +1,6 @@
 import random
 
+
 class People:
 
     def __init__(self, name, house):
@@ -44,16 +45,20 @@ class People:
             print("Недостаточно денег для покупок")
 
 
-
 class House:
 
     def __init__(self):
         self.food = 50
         self.money = 0
 
+
 house = House()
 Tom = People("Tom", house)
 Vany = People("Vany", house)
+
+# TODO, предлагаю создать у человека метод act и перенести условный оператор в него.
+#  В цикле запускать только метод act человека.
+#  Если человек умер, из цикла стоит выйти.
 
 for day in range(365):
     number = random.randint(1, 6)
