@@ -62,6 +62,9 @@ while True:
     elif answer == "нет":
         user1_points = user_1.points()
         computer_points = computer.points()
+        if user1_points > 21:
+            print("{} проиграл так как собрал больше 21".format(user_1.name))
+            break
         if user1_points > computer_points:
             print("Победил {} с общим количеством очков {} против очков компьютера {}".format(
                 user_1.name, user1_points, computer_points))
