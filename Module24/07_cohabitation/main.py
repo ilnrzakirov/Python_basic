@@ -80,9 +80,9 @@ Vany = People("Vany", house)
 for day in range(365):
     Tom.act()
     Vany.act()
-    if Tom.alive == False:
+    if not Tom.alive:
         print("{} умер".format(Tom))
         break
-    elif Vany.alive == False:
+    elif not Vany.alive:
         print("{} умер".format(Vany))
         break
