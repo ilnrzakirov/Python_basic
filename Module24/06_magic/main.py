@@ -20,6 +20,7 @@ class Wather:
     def __str__(self):
         return f'{self.name}'
 
+
 class Ground:
 
     def __init__(self):
@@ -37,6 +38,7 @@ class Ground:
 
     def __str__(self):
         return f'{self.name}'
+
 
 class Fire:
 
@@ -56,6 +58,7 @@ class Fire:
     def __str__(self):
         return f'{self.name}'
 
+
 class Air:
 
     def __init__(self):
@@ -73,6 +76,7 @@ class Air:
 
     def __str__(self):
         return f'{self.name}'
+
 
 class Storm:
     name = "storm"
@@ -123,3 +127,7 @@ air = Air()
 
 other = water + fire
 print(other)
+
+print(Wather() + Ground())
+
+# зачёт!
