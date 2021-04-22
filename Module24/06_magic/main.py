@@ -69,25 +69,43 @@ class Air:
 class Storm:
     name = "storm"
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Steam:
     name = "steam"
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Dirt:
     name = "dirt"
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Lightning:
     name = "lightning"
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Dust:
     name = "dust"
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Lava:
     name = "lava"
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 water = Wather()
@@ -96,4 +114,4 @@ fire = Fire()
 air = Air()
 
 other = water + ground
-print(other)
+print(other.name)
