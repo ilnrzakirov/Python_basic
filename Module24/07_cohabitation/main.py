@@ -44,6 +44,21 @@ class People:
         else:
             print("Недостаточно денег для покупок")
 
+    def act(self):
+        number = random.randint(1, 6)
+        if self.satiety < 20:
+            self.eats()
+        elif self.house.food < 20:
+            self.shop()
+        elif self.house.money < 50:
+            self.work()
+        elif number == 1:
+            self.work()
+        elif number == 2:
+            self.eats()
+        elif number > 2:
+            self.play()
+
 
 class House:
 
@@ -56,32 +71,16 @@ house = House()
 Tom = People("Tom", house)
 Vany = People("Vany", house)
 
-# TODO, предлагаю создать у человека метод act и перенести условный оператор в него.
+#  предлагаю создать у человека метод act и перенести условный оператор в него.
 #  В цикле запускать только метод act человека.
 #  Если человек умер, из цикла стоит выйти.
 
 for day in range(365):
-    number = random.randint(1, 6)
-    if Tom.satiety < 20:
-        Tom.eats()
-    elif Vany.satiety < 20:
-        Vany.eats()
-    elif house.food < 20:
-        Tom.shop()
-        Vany.shop()
-    elif house.money < 50:
-        Tom.work()
-        Vany.work()
-    elif number == 1:
-        Tom.work()
-        Vany.work()
-    elif number == 2:
-        Tom.eats()
-        Vany.eats()
-    elif number > 2:
-        Tom.play()
-        Vany.play()
+    Tom.act()
+    Vany.act()
     if Tom.alive == False:
         print("{} умер".format(Tom))
+        break
     elif Vany.alive == False:
         print("{} умерл".format(Vany))
+        break
