@@ -46,6 +46,7 @@ class People:
 
     def act(self):
         number = random.randint(1, 6)
+        # TODO, если умер, действия не выполняются.
         if self.satiety < 20:
             self.eats()
         elif self.house.food < 20:

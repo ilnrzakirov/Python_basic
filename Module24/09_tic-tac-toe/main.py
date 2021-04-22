@@ -10,7 +10,7 @@ class Board:
         if isinstance(user, User):
             self.board[cell - 1] = user.symbol
         else:
-            self.board[cell -1] = user
+            self.board[cell - 1] = user
 
     def print_board(self):
         print("-" * 14, "\n",
@@ -50,3 +50,5 @@ for round in range(9):
 
 #  пока что при вводе проставляются только "0".
 #  Возможно, "X" будет проставлять наш код, выбирая рандомное число из доступных чисел.
+# TODO, если победили, из игры выходим.
+#  http://joxi.ru/BA0Byx4TpQLg5m
