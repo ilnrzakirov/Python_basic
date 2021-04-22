@@ -17,6 +17,8 @@ class Wather:
         else:
             return None
 
+    def __str__(self):
+        return f'{self.name}'
 
 class Ground:
 
@@ -33,6 +35,8 @@ class Ground:
         else:
             return None
 
+    def __str__(self):
+        return f'{self.name}'
 
 class Fire:
 
@@ -49,6 +53,8 @@ class Fire:
         else:
             return None
 
+    def __str__(self):
+        return f'{self.name}'
 
 class Air:
 
@@ -65,6 +71,8 @@ class Air:
         else:
             return None
 
+    def __str__(self):
+        return f'{self.name}'
 
 class Storm:
     name = "storm"
@@ -113,5 +121,5 @@ ground = Ground()
 fire = Fire()
 air = Air()
 
-other = water + ground
-print(other.name)
+other = water + fire
+print(other)
