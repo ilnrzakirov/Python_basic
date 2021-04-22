@@ -84,5 +84,5 @@ for day in range(365):
         print("{} умер".format(Tom))
         break
     elif Vany.alive == False:
-        print("{} умерл".format(Vany))
+        print("{} умер".format(Vany))
         break
