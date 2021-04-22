@@ -1,3 +1,6 @@
+import random
+
+
 class Board:
 
     def __init__(self):
@@ -6,6 +9,8 @@ class Board:
     def prescribe(self, user, cell):
         if isinstance(user, User):
             self.board[cell - 1] = user.symbol
+        else:
+            self.board[cell -1] = user
 
     def print_board(self):
         print("-" * 14, "\n",
@@ -26,8 +31,8 @@ class User:
 
 board = Board()
 user1 = User("User1", "X")
-user2 = User("User2", "O")
 
+computer_bord = []
 for round in range(9):
     board.print_board()
     print("{} выбери ячейку".format(user1.name))
@@ -36,11 +41,12 @@ for round in range(9):
         board.prescribe(user1, answer)
     else:
         print("Такой ячейки нет")
-    print("{} выбери ячейку".format(user2.name))
-    if answer > 0 and answer <= 9:
-        board.prescribe(user2, answer)
-    else:
-        print("Такой ячейки нет")
+    for item in board.board:
+        if item != "X" and item != "O":
+            computer_bord.append(item)
+    computer_answer = random.choice(computer_bord)
+    board.prescribe("O", computer_answer)
+    computer_bord.clear()
 
-# TODO, пока что при вводе проставляются только "0".
+#  пока что при вводе проставляются только "0".
 #  Возможно, "X" будет проставлять наш код, выбирая рандомное число из доступных чисел.
