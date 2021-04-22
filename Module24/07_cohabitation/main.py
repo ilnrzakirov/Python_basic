@@ -46,19 +46,20 @@ class People:
 
     def act(self):
         number = random.randint(1, 6)
-        # TODO, если умер, действия не выполняются.
-        if self.satiety < 20:
-            self.eats()
-        elif self.house.food < 20:
-            self.shop()
-        elif self.house.money < 50:
-            self.work()
-        elif number == 1:
-            self.work()
-        elif number == 2:
-            self.eats()
-        elif number > 2:
-            self.play()
+        if self.alive:
+        # , если умер, действия не выполняются.
+            if self.satiety < 20:
+                self.eats()
+            elif self.house.food < 20:
+                self.shop()
+            elif self.house.money < 50:
+                self.work()
+            elif number == 1:
+                self.work()
+            elif number == 2:
+                self.eats()
+            elif number > 2:
+                self.play()
 
 
 class House:
