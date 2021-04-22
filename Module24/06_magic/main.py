@@ -9,11 +9,11 @@ class Wather:
 
     def __add__(self, other):
         if isinstance(other, Air):
-            return Storm
+            return Storm()
         elif isinstance(other, Fire):
-            return Steam
+            return Steam()
         elif isinstance(other, Ground):
-            return Dirt
+            return Dirt()
         else:
             return None
 
@@ -25,11 +25,11 @@ class Ground:
 
     def __add__(self, other):
         if isinstance(other, Wather):
-            return Dirt
+            return Dirt()
         elif isinstance(other, Air):
-            return Dust
+            return Dust()
         elif isinstance(other, Fire):
-            return Lava
+            return Lava()
         else:
             return None
 
@@ -41,11 +41,11 @@ class Fire:
 
     def __add__(self, other):
         if isinstance(other, Air):
-            return Lightning
+            return Lightning()
         elif isinstance(other, Ground):
-            return Lava
+            return Lava()
         elif isinstance(other, Wather):
-            return Steam
+            return Steam()
         else:
             return None
 
@@ -57,11 +57,11 @@ class Air:
 
     def __add__(self, other):
         if isinstance(other, Wather):
-            return Storm
+            return Storm()
         elif isinstance(other, Fire):
-            return Lightning
+            return Lightning()
         elif isinstance(other, Ground):
-            return Dust
+            return Dust()
         else:
             return None
 
