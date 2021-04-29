@@ -1,11 +1,10 @@
-
-
 class Person:
 
     def __init__(self, name, surname, age):
         self.__name = name
         self.__surname = surname
         self.__age = age
+
 
 class Employee(Person):
 
@@ -15,6 +14,8 @@ class Employee(Person):
 
 class Manager(Employee):
 
+    # TODO, предлагаю определить этот метод в классе Employee.
+    #  В таком случае, в остальных классах его определять будет не нужно. =)
     def __init__(self, name, surname, age):
         super().__init__(name, surname, age)
         self.name = name
@@ -26,6 +27,7 @@ class Manager(Employee):
 
     def info(self):
         print("{} {} заработал в этом месяце {}".format(self.name, self.surname, self.payroll_calculation()))
+
 
 class Agent(Employee):
     volume_sale = 100000
@@ -42,6 +44,7 @@ class Agent(Employee):
     def info(self):
         print("{} {} заработал в этом месяце {}".format(self.name, self.surname, self.payroll_calculation()))
 
+
 class Worker(Employee):
     hours_worked = 55
 
@@ -56,6 +59,7 @@ class Worker(Employee):
 
     def info(self):
         print("{} {} заработал в этом месяце {}".format(self.name, self.surname, self.payroll_calculation()))
+
 
 manager1 = Manager("Tom", "Abramson", 25)
 manager1.info()
@@ -81,5 +85,3 @@ worker2.info()
 worker3 = Worker("Jack", "Derrick", 25)
 worker3.hours_worked = 72
 worker3.info()
-
-

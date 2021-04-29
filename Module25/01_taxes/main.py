@@ -10,6 +10,7 @@ class Property:
 
 class Appartment(Property):
 
+    # TODO, предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
 
