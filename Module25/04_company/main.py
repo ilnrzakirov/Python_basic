@@ -19,7 +19,7 @@ class Employee(Person):
 
 class Manager(Employee):
 
-    # TODO, предлагаю определить этот метод в классе Employee.
+    # , предлагаю определить этот метод в классе Employee.
     #  В таком случае, в остальных классах его определять будет не нужно. =)
 
     def payroll_calculation(self):
