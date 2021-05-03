@@ -13,26 +13,25 @@ class Appartment(Property):
     # TODO, предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
+        self.tax = worth / 1000
 
-    def tax_calculation(self, tax = 1000):
-        return self.worth / tax
 
 class Car(Property):
 
     def __init__(self, worth):
         super().__init__(worth)
+        self.tax = worth / 200
 
-    def tax_calculation(self, tax = 200):
-        return self.worth / tax
+
 
 
 class CountryHouse(Property):
 
     def __init__(self, worth):
         super().__init__(worth)
+        self.tax = worth / 500
 
-    def tax_calculation(self, tax = 500):
-        return self.worth / tax
+
 
 print("Для рассчета налога - введите количество денег и стоимость имущества: ")
 bank = int(input("Количество денег: "))
@@ -43,13 +42,13 @@ car = Car(car_price)
 appartament = Appartment(appartament_price)
 house =CountryHouse(house_price)
 
-if bank >= car.tax_calculation() + appartament.tax_calculation() + house.tax_calculation():
+if bank >= car.tax + appartament.tax + house.tax:
     print("Для оплаты транспортного налога {}, налога на аппартменты {}, налога на дачу {} у Вас достаточно средств".format(
-        car.tax_calculation(), appartament.tax_calculation(), house.tax_calculation()
+        car.tax, appartament.tax, house.tax
     ))
 else:
-    credit = bank - car.tax_calculation() - appartament.tax_calculation() - house.tax_calculation()
+    credit = bank - car.tax - appartament.tax - house.tax
     print("Для оплаты транспортного налога {}, налога на аппартменты {}, налога на дачу {} у Вас недостаточно средств".format(
-        car.tax_calculation(), appartament.tax_calculation(), house.tax_calculation()
+        car.tax, appartament.tax, house.tax
     ))
     print("Что бы оплатить нужно еще денег: {}".format(abs(credit)))
