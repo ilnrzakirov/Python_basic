@@ -1,6 +1,8 @@
+import random
 
 
 class Person:
+    __total_eat = 0
 
     def __init__(self, name, satiety, happiness, house):
         self.name = name
@@ -12,10 +14,14 @@ class Person:
     def eat(self):
         self.satiety += 30
         self.house.food -= 30
+        self.__total_eat += 30
 
-
+    def get_total_eat(self):
+        return self.__total_eat
 
 class Husband(Person):
+    __total_money = 100
+
 
     def __init__(self, name, house, satiety=30, happiness=100):
         super().__init__(name, satiety, happiness, house)
@@ -26,10 +32,38 @@ class Husband(Person):
 
     def play(self):
         self.happiness += 20
+        self.satiety -= 10
 
 
     def petting_cat(self):
         self.happiness += 5
+        self.satiety -= 10
+
+    def work(self):
+        self.house.mnoney += 150
+        self.__total_money += 150
+        self.satiety -= 10
+
+    def get_total_money(self):
+        return self.__total_money
+
+    def  act(self):
+        if self.satiety < 30:
+            self.eat()
+            print("{} решил поесть".format(self.name))
+        elif self.happiness < 20:
+            number = random.randint (1, 2)
+            if number == 1:
+                self.play()
+                print("{} играет в компьютерные игры".format(self.name))
+            else:
+                self.petting_cat()
+                print("{} играет с котом". format(self.name))
+        elif self.house.mnoney < 150:
+            self.work()
+            print("{} пошел на работу".format(self.name))
+        else:
+            self.work()
 
 class Wife(Person):
 
@@ -42,21 +76,38 @@ class Wife(Person):
 
     def petting_cat(self):
         self.happiness += 5
+        self.satiety -= 10
 
     def shopping(self):
         self.house.food += 10
         self.house.cats_food += 10
         self.house.mnoney -= 20
+        self.satiety -= 10
 
     def coat(self):
         self.happiness += 60
         self.house.coat += 1
         self.house.mnoney -= 350
+        self.satiety -= 10
 
     def cleaning(self):
         self.house.dirt -= 100
         if self.house.dirt > 90:
             self.happiness -= 5
+        self.satiety -= 10
+
+    def act(self):
+        if self.satiety < 30:
+            self.eat()
+            print("{} решила поесть ".format(self.name))
+        elif self.house.mnoney > 650:
+            self.coat()
+            print("{} решила купить шубу".format(self.name))
+        elif self.house.dirt > 80:
+            self.cleaning()
+            print("{} решила убраться в квартире".format(self.name))
+        else:
+            self.petting_cat()
 
 class Cat():
 
@@ -70,13 +121,47 @@ class Cat():
         self.satiety += 20
         self.house.cats_food -= 10
 
+    def sleep(self):
+        self.satiety -= 10
+
+    def hooliganism(self):
+        self.satiety -= 10
+        self.house.dirt += 10
+
+
+
+    def act(self):
+        if self.satiety < 20:
+            self.eat()
+            print("Кот ест")
+        else:
+            number = random.randint(1, 2)
+            if number == 1:
+                self.hooliganism()
+                print("кот хулиганничает")
+            else:
+                self.sleep()
+                print("Кот спит")
+
 class House:
 
-    def __init__(self, cat):
+    def __init__(self):
         self.mnoney = 100
         self.food = 50
         self.cats_food = 30
         self.dirt = 0
-        if isinstance(cat, Cat):
-            self.cat = cat
         self.coat = 0
+
+
+
+
+house = House()
+cat = Cat("cat", house)
+man = Husband("man", house)
+woman = Wife("woman", house)
+for day in range(365):
+    man.act()
+    cat.act()
+    woman.act()
+print("Всего куплено шуб {}, сьедино {} еды, заработано денег: {}".format(house.coat,
+            man.get_total_eat() + woman.get_total_eat(), man.get_total_money() ))
