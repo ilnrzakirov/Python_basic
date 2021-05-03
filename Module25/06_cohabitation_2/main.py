@@ -51,6 +51,8 @@ class Husband(Person):
         if self.satiety < 30:
             self.eat()
             print("{} решил поесть".format(self.name))
+            if house.food < 30:
+                self.satiety -= 10
         elif self.happiness < 20:
             number = random.randint (1, 2)
             if number == 1:
@@ -100,6 +102,8 @@ class Wife(Person):
         if self.satiety < 30:
             self.eat()
             print("{} решила поесть ".format(self.name))
+            if house.food < 30:
+                self.satiety -= 10
         elif self.house.mnoney > 650:
             self.coat()
             print("{} решила купить шубу".format(self.name))
@@ -134,6 +138,8 @@ class Cat():
         if self.satiety < 20:
             self.eat()
             print("Кот ест")
+            if self.house.cats_food < 10:
+                self.satiety -= 10
         else:
             number = random.randint(1, 2)
             if number == 1:

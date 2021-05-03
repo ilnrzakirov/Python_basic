@@ -1,1 +1,3 @@
-# TODO здесь писать код
+
+class MyDict:
+
