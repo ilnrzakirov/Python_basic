@@ -8,6 +8,11 @@ class Person:
 
 class Employee(Person):
 
+    def __init__(self, name, surname, age):
+        super().__init__(name, surname, age)
+        self.name = name
+        self.surname = surname
+
     def payroll_calculation(self):
         self.salary = 13000
 
@@ -16,10 +21,6 @@ class Manager(Employee):
 
     # TODO, предлагаю определить этот метод в классе Employee.
     #  В таком случае, в остальных классах его определять будет не нужно. =)
-    def __init__(self, name, surname, age):
-        super().__init__(name, surname, age)
-        self.name = name
-        self.surname = surname
 
     def payroll_calculation(self):
         salary = 13000
@@ -32,11 +33,6 @@ class Manager(Employee):
 class Agent(Employee):
     volume_sale = 100000
 
-    def __init__(self, name, surname, age):
-        super().__init__(name, surname, age)
-        self.name = name
-        self.surname = surname
-
     def payroll_calculation(self):
         salary = 5000 + (self.volume_sale * 0.05)
         return salary
@@ -48,10 +44,6 @@ class Agent(Employee):
 class Worker(Employee):
     hours_worked = 55
 
-    def __init__(self, name, surname, age):
-        super().__init__(name, surname, age)
-        self.name = name
-        self.surname = surname
 
     def payroll_calculation(self):
         salary = 100 * self.hours_worked
