@@ -14,6 +14,8 @@ class Employee(Person):
         self.surname = surname
 
     def payroll_calculation(self):
+        # TODO, возможно self.salary, лучше сделать аргументом класса, а в данном методе просто возвращать этот аргумент.
+        #  Если нужно, то с доп расчётами.
         self.salary = 13000
 
 
@@ -34,6 +36,7 @@ class Agent(Employee):
     volume_sale = 100000
 
     def payroll_calculation(self):
+        #  TODO, 5000 и 0.05 возможно тоже стоит сделать аргументами класса.
         salary = 5000 + (self.volume_sale * 0.05)
         return salary
 

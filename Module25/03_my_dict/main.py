@@ -1,4 +1,3 @@
-
 class MyDict:
 
     def __init__(self, key, value):
@@ -7,7 +6,6 @@ class MyDict:
 
     def __str__(self):
         print(self.key, ":", self.value)
-
 
     def get(self, key):
         if key == self.key:
@@ -18,3 +16,5 @@ class MyDict:
 
 num = MyDict("non", 212)
 print(num.get("n2n"))
+
+# зачёт!

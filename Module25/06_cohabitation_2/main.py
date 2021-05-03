@@ -8,10 +8,12 @@ class Person:
         self.name = name
         self.satiety = satiety
         self.happiness = happiness
+        # TODO, если нет, то может сделать значение дома равным None? =)
         if isinstance(house, House):
             self.house = house
 
     def eat(self):
+        # TODO, если нет еды, то не поели.
         self.satiety += 30
         self.house.food -= 30
         self.__total_eat += 30
@@ -48,6 +50,10 @@ class Husband(Person):
         return self.__total_money
 
     def  act(self):
+
+        # TODO, Если человек умер, то действия в этом методе не должны происходить.
+        #  Возможно, стоит добавить Метод act у Родительского класса с подобной проверкой.
+
         if self.satiety < 30:
             self.eat()
             print("{} решил поесть".format(self.name))
@@ -81,12 +87,14 @@ class Wife(Person):
         self.satiety -= 10
 
     def shopping(self):
+        # TODO, если денег нет, то не купила.
         self.house.food += 10
         self.house.cats_food += 10
         self.house.mnoney -= 20
         self.satiety -= 10
 
     def coat(self):
+        # TODO, если денег нет, то не купила.
         self.happiness += 60
         self.house.coat += 1
         self.house.mnoney -= 350
@@ -115,6 +123,7 @@ class Wife(Person):
 
 class Cat():
 
+    # TODO, предлагаю добавить метод у человека "Поселить кота" и передавать коту "свой" дом в новом методе =)
     def __init__(self, name, house, satiety = 30):
         self.name = name
         self.satiety =satiety
@@ -122,6 +131,7 @@ class Cat():
             self.house = house
 
     def eat(self):
+        # TODO, если еды нет, то не поел.
         self.satiety += 20
         self.house.cats_food -= 10
 

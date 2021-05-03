@@ -10,11 +10,13 @@ class Error:
 
 def one_day():
     number = random.randint(1, 10)
-    # TODO, эта функция ловить ошибки не должна.
+    # , эта функция ловить ошибки не должна.
     #  только вызывать. Ловить необходимо внутри основного цикла программы.
 
     if number == 8:
         error = random.choice(err)
+        # TODO, в этой функции запись в файл не нужна.
+        #  Стоит записывать в файл в основном цикле программы
         with open("karma.log", "a") as karma_log:
             karma_log.write(str(error) + "\n")
         raise error.name
