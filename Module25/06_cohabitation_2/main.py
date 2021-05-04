@@ -8,15 +8,20 @@ class Person:
         self.name = name
         self.satiety = satiety
         self.happiness = happiness
-        # TODO, если нет, то может сделать значение дома равным None? =)
+        # , если нет, то может сделать значение дома равным None? =)
         if isinstance(house, House):
             self.house = house
+        else:
+            self.house = None
 
     def eat(self):
-        # TODO, если нет еды, то не поели.
-        self.satiety += 30
-        self.house.food -= 30
-        self.__total_eat += 30
+        # , если нет еды, то не поели.
+        if self.house.food > 30:
+            self.satiety += 30
+            self.house.food -= 30
+            self.__total_eat += 30
+        else:
+            print("Недостаточно еды")
 
     def get_total_eat(self):
         return self.__total_eat
@@ -87,18 +92,24 @@ class Wife(Person):
         self.satiety -= 10
 
     def shopping(self):
-        # TODO, если денег нет, то не купила.
-        self.house.food += 10
-        self.house.cats_food += 10
-        self.house.mnoney -= 20
-        self.satiety -= 10
+        # , если денег нет, то не купила.
+        if self.house.mnoney > 20:
+            self.house.food += 10
+            self.house.cats_food += 10
+            self.house.mnoney -= 20
+            self.satiety -= 10
+        else:
+            print("Недостаточно денег для покупки еды")
 
     def coat(self):
-        # TODO, если денег нет, то не купила.
-        self.happiness += 60
-        self.house.coat += 1
-        self.house.mnoney -= 350
-        self.satiety -= 10
+        # , если денег нет, то не купила.
+        if self.house.mnoney > 350:
+            self.happiness += 60
+            self.house.coat += 1
+            self.house.mnoney -= 350
+            self.satiety -= 10
+        else:
+            print("Недостаточно денег для покупки шубы")
 
     def cleaning(self):
         self.house.dirt -= 100
@@ -131,9 +142,12 @@ class Cat():
             self.house = house
 
     def eat(self):
-        # TODO, если еды нет, то не поел.
-        self.satiety += 20
-        self.house.cats_food -= 10
+        # , если еды нет, то не поел.
+        if self.house.cats_food > 10:
+            self.satiety += 20
+            self.house.cats_food -= 10
+        else:
+            print("Недостаточно еды для кота")
 
     def sleep(self):
         self.satiety -= 10

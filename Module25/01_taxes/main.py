@@ -9,27 +9,37 @@ class Property:
 
 
 class Appartment(Property):
-
+    tax = 1000
     # , предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
-        self.tax = worth / 1000
-        # TODO, 1000 и worth стоит реализовать аргументами класса.
+
+        # , 1000 и worth стоит реализовать аргументами класса.
         #  А расчёт налога, возможно, лучше сделать отдельным методом.
 
+    def tax_calculation(self):
+        res_tax = self.worth / self.tax
+        return res_tax
 
 class Car(Property):
+    tax = 200
 
     def __init__(self, worth):
         super().__init__(worth)
-        self.tax = worth / 200
 
+    def tax_calculation(self):
+        res_tax = self.worth / self.tax
+        return res_tax
 
 class CountryHouse(Property):
+    tax = 500
 
     def __init__(self, worth):
         super().__init__(worth)
-        self.tax = worth / 500
+
+    def tax_calculation(self):
+        res_tax = self.worth / self.tax
+        return res_tax
 
 
 print("Для рассчета налога - введите количество денег и стоимость имущества: ")
@@ -41,15 +51,15 @@ car = Car(car_price)
 appartament = Appartment(appartament_price)
 house = CountryHouse(house_price)
 
-if bank >= car.tax + appartament.tax + house.tax:
+if bank >= car.tax_calculation() + appartament.tax_calculation() + house.tax_calculation():
     print(
         "Для оплаты транспортного налога {}, налога на аппартменты {}, налога на дачу {} у Вас достаточно средств".format(
-            car.tax, appartament.tax, house.tax
+            car.tax_calculation(), appartament.tax_calculation(), house.tax_calculation()
         ))
 else:
-    credit = bank - car.tax - appartament.tax - house.tax
+    credit = bank - car.tax_calculation() - appartament.tax_calculation() - house.tax_calculation()
     print(
         "Для оплаты транспортного налога {}, налога на аппартменты {}, налога на дачу {} у Вас недостаточно средств".format(
-            car.tax, appartament.tax, house.tax
+            car.tax_calculation(), appartament.tax_calculation(), house.tax_calculation()
         ))
     print("Что бы оплатить нужно еще денег: {}".format(abs(credit)))
