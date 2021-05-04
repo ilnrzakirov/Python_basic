@@ -107,10 +107,10 @@ class Wife(Person):
 
     def shopping(self):
         # , если денег нет, то не купила.
-        if self.house.mnoney > 30:
-            self.house.food += 30
+        if self.house.mnoney > 60:
+            self.house.food += 60
             self.house.cats_food += 10
-            self.house.mnoney -= 30
+            self.house.mnoney -= 60
             self.satiety -= 10
         else:
             print("Недостаточно денег для покупки еды")
