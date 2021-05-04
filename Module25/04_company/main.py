@@ -7,6 +7,7 @@ class Person:
 
 
 class Employee(Person):
+    salary = 13000
 
     def __init__(self, name, surname, age):
         super().__init__(name, surname, age)
@@ -14,19 +15,18 @@ class Employee(Person):
         self.surname = surname
 
     def payroll_calculation(self):
-        # TODO, возможно self.salary, лучше сделать аргументом класса, а в данном методе просто возвращать этот аргумент.
+        # , возможно self.salary, лучше сделать аргументом класса, а в данном методе просто возвращать этот аргумент.
         #  Если нужно, то с доп расчётами.
-        self.salary = 13000
+        return self.salary
 
 
 class Manager(Employee):
-
+    salary = 13000
     # , предлагаю определить этот метод в классе Employee.
     #  В таком случае, в остальных классах его определять будет не нужно. =)
 
     def payroll_calculation(self):
-        salary = 13000
-        return salary
+        return self.salary
 
     def info(self):
         print("{} {} заработал в этом месяце {}".format(self.name, self.surname, self.payroll_calculation()))
@@ -34,10 +34,12 @@ class Manager(Employee):
 
 class Agent(Employee):
     volume_sale = 100000
+    base_salary = 5000
+    k = 0.05
 
     def payroll_calculation(self):
-        #  TODO, 5000 и 0.05 возможно тоже стоит сделать аргументами класса.
-        salary = 5000 + (self.volume_sale * 0.05)
+        #  , 5000 и 0.05 возможно тоже стоит сделать аргументами класса.
+        salary = self.base_salary + (self.volume_sale * self.k)
         return salary
 
     def info(self):
@@ -46,10 +48,10 @@ class Agent(Employee):
 
 class Worker(Employee):
     hours_worked = 55
-
+    k = 100
 
     def payroll_calculation(self):
-        salary = 100 * self.hours_worked
+        salary = self.k * self.hours_worked
         return salary
 
     def info(self):
