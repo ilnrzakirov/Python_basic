@@ -8,11 +8,13 @@ class Person:
         self.name = name
         self.satiety = satiety
         self.happiness = happiness
+        self.alive = True
         # , если нет, то может сделать значение дома равным None? =)
         if isinstance(house, House):
             self.house = house
         else:
             self.house = None
+
 
     def eat(self):
         # , если нет еды, то не поели.
@@ -25,6 +27,16 @@ class Person:
 
     def get_total_eat(self):
         return self.__total_eat
+
+    def settle_cat(self, cat):
+        if isinstance(cat, Cat):
+            cat.house = self.house
+
+    def act(self):
+        if self.satiety <= 0:
+            self.alive = False
+            print("{} умер".format(self.name))
+
 
 class Husband(Person):
     __total_money = 100
@@ -60,10 +72,12 @@ class Husband(Person):
         #  Возможно, стоит добавить Метод act у Родительского класса с подобной проверкой.
 
         if self.satiety < 30:
-            self.eat()
-            print("{} решил поесть".format(self.name))
             if house.food < 30:
                 self.satiety -= 10
+                self.work()
+            else:
+                self.eat()
+                print("{} решил поесть".format(self.name))
         elif self.happiness < 20:
             number = random.randint (1, 2)
             if number == 1:
@@ -117,12 +131,15 @@ class Wife(Person):
             self.happiness -= 5
         self.satiety -= 10
 
+
     def act(self):
         if self.satiety < 30:
-            self.eat()
-            print("{} решила поесть ".format(self.name))
             if house.food < 30:
                 self.satiety -= 10
+                self.shopping()
+            else:
+                self.eat()
+                print("{} решила поесть ".format(self.name))
         elif self.house.mnoney > 650:
             self.coat()
             print("{} решила купить шубу".format(self.name))
@@ -135,11 +152,9 @@ class Wife(Person):
 class Cat():
 
     # TODO, предлагаю добавить метод у человека "Поселить кота" и передавать коту "свой" дом в новом методе =)
-    def __init__(self, name, house, satiety = 30):
+    def __init__(self, name, satiety = 30):
         self.name = name
         self.satiety =satiety
-        if isinstance(house, House):
-            self.house = house
 
     def eat(self):
         # , если еды нет, то не поел.
@@ -186,8 +201,9 @@ class House:
 
 
 house = House()
-cat = Cat("cat", house)
+cat = Cat("cat")
 man = Husband("man", house)
+man.settle_cat(cat)
 woman = Wife("woman", house)
 for day in range(365):
     man.act()
