@@ -22,6 +22,7 @@ class Employee(Person):
 
 class Manager(Employee):
     salary = 13000
+
     # , предлагаю определить этот метод в классе Employee.
     #  В таком случае, в остальных классах его определять будет не нужно. =)
 
@@ -82,3 +83,5 @@ worker2.info()
 worker3 = Worker("Jack", "Derrick", 25)
 worker3.hours_worked = 72
 worker3.info()
+
+# зачёт!

@@ -1,5 +1,6 @@
 import random
 
+
 class Error:
 
     def __init__(self, name):
@@ -8,16 +9,19 @@ class Error:
     def __str__(self):
         return self.name
 
+
 def one_day():
     number = random.randint(1, 10)
     # , эта функция ловить ошибки не должна.
     #  только вызывать. Ловить необходимо внутри основного цикла программы.
 
     if number == 8:
-        # TODO, в этой функции запись в файл не нужна.
+        # , в этой функции запись в файл не нужна.
         #  Стоит записывать в файл в основном цикле программы
         raise Exception
-      # TODO, давайте вспомним как правильно ловить ошибки =)
+        # TODO, предлагаю в этом месте вызывать исключение из списка err.
+        #  При помощи какого метода модуля random можно получить случайный элемент списка? =)
+    # , давайте вспомним как правильно ловить ошибки =)
     return random.randint(1, 7)
 
 
@@ -37,5 +41,5 @@ while karma < 500:
     except Exception:
         error = random.choice(err)
         with open("karma.log", "a") as karma_log:
-            karma_log.write(str(error) + "\n")
+            karma_log.write(str(error) + "\n")  # TODO, записывать в файл предлагаю при помощи форматирования =)
         print("Ошибка: {}".format(error))

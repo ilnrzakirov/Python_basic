@@ -3,6 +3,7 @@ class Property:
     def __init__(self, worth):
         self.worth = worth
 
+    # TODO, параметр tax получился лишний в данном методе =)
     def tax_calculation(self, tax):
         res_tax = self.worth * (tax / 100)
         return res_tax
@@ -10,7 +11,8 @@ class Property:
 
 class Appartment(Property):
     tax = 1000
-    # , предлагаю сумму налога tax переопределять в методе init =)
+
+    # TODO, предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
 
@@ -21,9 +23,11 @@ class Appartment(Property):
         res_tax = self.worth / self.tax
         return res_tax
 
+
 class Car(Property):
     tax = 200
 
+    # TODO, предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
 
@@ -31,8 +35,11 @@ class Car(Property):
         res_tax = self.worth / self.tax
         return res_tax
 
+
 class CountryHouse(Property):
     tax = 500
+
+    # TODO, предлагаю сумму налога tax переопределять в методе init =)
 
     def __init__(self, worth):
         super().__init__(worth)
