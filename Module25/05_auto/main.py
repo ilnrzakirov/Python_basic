@@ -27,6 +27,7 @@ class Car:
 class Bus(Car):
     fare = 100
     bank = 0
+    k = 1
 
     def __init__(self, name, x, y, degree):
         super().__init__(name, x, y, degree)
@@ -34,11 +35,20 @@ class Bus(Car):
 
     def enter(self, passengers):
         self.passengers += passengers
-        self.bank = self.fare * self.passengers
+        self.bank = self.fare * self.passengers * self.k
 
     def go_out(self, passengers):
         self.passengers -= passengers
 
-    # TODO, Наконец, метод move должен быть переопределён, чтобы увеличивать количество денег
+    def move(self, distance):
+        deltax = distance * math.cos(self.degree)
+        deltay = distance * math.sin(self.degree)
+        x2 = self.x + deltax
+        y2 = self.y + deltay
+        self.x = x2
+        self.y = y2
+        self.k += distance / 10
+
+    # , Наконец, метод move должен быть переопределён, чтобы увеличивать количество денег
     #  в соответствии с количеством пассажиров и проезжающим расстоянием.
-    # TODO, к примеру, за каждый км, который проехал человек мы можем добавлять по 0.1 к коэффициенту стоимости проезда =)
+    # , к примеру, за каждый км, который проехал человек мы можем добавлять по 0.1 к коэффициенту стоимости проезда =)
