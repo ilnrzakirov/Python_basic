@@ -41,5 +41,5 @@ while karma < 500:
     except Exception:
         error = random.choice(err)
         with open("karma.log", "a", encoding="UTF-8") as karma_log:
-            karma_log.write("Ошибка: {} \n".format(error))  # TODO, записывать в файл предлагаю при помощи форматирования =)
+            karma_log.write("Ошибка: {} \n".format(error))  # , записывать в файл предлагаю при помощи форматирования =)
         print("Ошибка: {}".format(error))
