@@ -18,8 +18,8 @@ def one_day():
     if number == 8:
         # , в этой функции запись в файл не нужна.
         #  Стоит записывать в файл в основном цикле программы
-        raise Exception
-        # TODO, предлагаю в этом месте вызывать исключение из списка err.
+        raise random.choice(err)
+        # , предлагаю в этом месте вызывать исключение из списка err.
         #  При помощи какого метода модуля random можно получить случайный элемент списка? =)
     # , давайте вспомним как правильно ловить ошибки =)
     return random.randint(1, 7)
@@ -40,6 +40,6 @@ while karma < 500:
         print("Карма: {}".format(karma))
     except Exception:
         error = random.choice(err)
-        with open("karma.log", "a") as karma_log:
-            karma_log.write(str(error) + "\n")  # TODO, записывать в файл предлагаю при помощи форматирования =)
+        with open("karma.log", "a", encoding="UTF-8") as karma_log:
+            karma_log.write("Ошибка: {} \n".format(error))  # TODO, записывать в файл предлагаю при помощи форматирования =)
         print("Ошибка: {}".format(error))
