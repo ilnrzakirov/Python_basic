@@ -31,13 +31,18 @@ class Person:
         if isinstance(cat, Cat):
             cat.house = self.house
 
-    # TODO, так же, стоит добавить метод "заселиться в дом"
+    def chek_into_house(self, house):
+        if isinstance(house, House):
+            self.house = house
+    # , так же, стоит добавить метод "заселиться в дом"
 
     def act(self):
         if self.satiety <= 0:
             self.alive = False
             print("{} умер".format(self.name))
-        # TODO, стои проверять в этом методе количество грязи в доме и сокращать "радость" человека, если грязи много.
+        elif self.house.dirt > 90:
+            self.happiness -= 10
+        # , стои проверять в этом методе количество грязи в доме и сокращать "радость" человека, если грязи много.
 
 
 class Husband(Person):
@@ -48,7 +53,7 @@ class Husband(Person):
         self.name = name
         self.satiety = satiety
         self.happiness = happiness
-        self.house = house
+        self.house = None
 
     def play(self):
         self.happiness += 20
@@ -68,7 +73,7 @@ class Husband(Person):
 
     def act(self):
 
-        # TODO, Если человек умер, то действия в этом методе не должны происходить.
+        # , Если человек умер, то действия в этом методе не должны происходить.
         #  Возможно, стоит добавить Метод act у Родительского класса с подобной проверкой.
 
         if self.satiety < 30:
@@ -100,7 +105,7 @@ class Wife(Person):
         self.name = name
         self.satiety = satiety
         self.happiness = happiness
-        self.house = house  # TODO, предлагаю изначально создавать этот аргумент равный None.
+        self.house = None  # , предлагаю изначально создавать этот аргумент равный None.
 
     def petting_cat(self):
         self.happiness += 5
@@ -152,11 +157,12 @@ class Wife(Person):
 
 class Cat():
 
-    # TODO, предлагаю добавить метод у человека "Поселить кота" и передавать коту "свой" дом в новом методе =)
+    # , предлагаю добавить метод у человека "Поселить кота" и передавать коту "свой" дом в новом методе =)
     def __init__(self, name, satiety=30):
         self.name = name
         self.satiety = satiety
-        # TODO, предлагаю создать коту аргумент "дом" изначально равный None
+        self.house = None
+        # , предлагаю создать коту аргумент "дом" изначально равный None
 
     def eat(self):
         # , если еды нет, то не поел.
@@ -202,8 +208,10 @@ class House:
 house = House()
 cat = Cat("cat")
 man = Husband("man", house)
+man.chek_into_house(house)
 man.settle_cat(cat)
 woman = Wife("woman", house)
+woman.chek_into_house(house)
 for day in range(365):
     man.act()
     cat.act()
@@ -211,3 +219,4 @@ for day in range(365):
 print("Всего куплено шуб {}, сьедино {} еды, заработано денег: {}".format(house.coat,
                                                                           man.get_total_eat() + woman.get_total_eat(),
                                                                           man.get_total_money()))
+
