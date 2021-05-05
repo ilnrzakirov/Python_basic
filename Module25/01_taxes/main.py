@@ -11,7 +11,6 @@ class Property:
 
 class Appartment(Property):
 
-
     # , предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
@@ -27,7 +26,6 @@ class Appartment(Property):
 
 class Car(Property):
 
-
     # , предлагаю сумму налога tax переопределять в методе init =)
     def __init__(self, worth):
         super().__init__(worth)
@@ -39,7 +37,6 @@ class Car(Property):
 
 
 class CountryHouse(Property):
-
 
     # , предлагаю сумму налога tax переопределять в методе init =)
 
@@ -73,3 +70,5 @@ else:
             car.tax_calculation(), appartament.tax_calculation(), house.tax_calculation()
         ))
     print("Что бы оплатить нужно еще денег: {}".format(abs(credit)))
+
+# зачёт!

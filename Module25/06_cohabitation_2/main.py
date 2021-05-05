@@ -34,6 +34,7 @@ class Person:
     def chek_into_house(self, house):
         if isinstance(house, House):
             self.house = house
+
     # , так же, стоит добавить метод "заселиться в дом"
 
     def act(self):
@@ -220,3 +221,4 @@ print("Всего куплено шуб {}, сьедино {} еды, зараб
                                                                           man.get_total_eat() + woman.get_total_eat(),
                                                                           man.get_total_money()))
 
+# зачёт!

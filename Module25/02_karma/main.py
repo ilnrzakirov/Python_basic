@@ -38,8 +38,10 @@ while karma < 500:
     try:
         karma += one_day()
         print("Карма: {}".format(karma))
+
+    # TODO, было бы правильней ловить ошибки в этом месте и их же записывать в файл
     except Exception:
-        error = random.choice(err)
+        error = random.choice(err)  # TODO, строка получилась лишняя, записывать в файл необходимо ту ошибку, которую поймали.
         with open("karma.log", "a", encoding="UTF-8") as karma_log:
             karma_log.write("Ошибка: {} \n".format(error))  # , записывать в файл предлагаю при помощи форматирования =)
         print("Ошибка: {}".format(error))
