@@ -44,11 +44,11 @@ while karma < 500:
     # TODO, файл с ошибками называется err и одна ошибка называется err.
     #  Что-то одно стоит переименовать.
 
-    except (KillError, DrunkError, CarCrashError, GluttonyError, DepressionError) as err:  # , предлагаю добавить синоним ( as err ) для ошибки и записывать её в лог тоже, вместо  Exception.
+    except (KillError, DrunkError, CarCrashError, GluttonyError, DepressionError) as chek_error:  # , предлагаю добавить синоним ( as err ) для ошибки и записывать её в лог тоже, вместо  Exception.
         # , в идеале, необходимо ловить в группе ошибки из списка err. И записывать в лог их.
 
         # Tтрока получилась лишняя, записывать в файл необходимо ту ошибку, которую поймали.
         with open("karma.log", "a", encoding="UTF-8") as karma_log:
             karma_log.write(
-                "Ошибка: {} \n".format(err))  # , записывать в файл предлагаю при помощи форматирования =)
-        print("Ошибка: {}".format(err))
+                "Ошибка: {} \n".format(chek_error))  # , записывать в файл предлагаю при помощи форматирования =)
+        print("Ошибка: {}".format(chek_error))
