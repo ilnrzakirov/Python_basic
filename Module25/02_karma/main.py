@@ -64,11 +64,7 @@ def one_day():
 #  Получилось, что мы должны хранить классы в списке err, но хранили объекты классов.
 #  Но сами классы при этом существовать перестали, т.к. объекты классов имеют названия классов. %)
 #  Получилось немного запутанным. Выход такой: не использовать для объектов классов названия классов =)
-KillError = KillError()
-DrunkError = DrunkError()
-CarCrashError = CarCrashError()
-GluttonyError = GluttonyError()
-DepressionError = DepressionError()
+
 err = [KillError, DrunkError, CarCrashError, GluttonyError, DepressionError]
 karma = 0
 
