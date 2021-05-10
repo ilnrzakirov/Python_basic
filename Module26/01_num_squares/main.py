@@ -1,5 +1,3 @@
-
-
 class Square:
 
     def __init__(self, number: int) -> None:
@@ -17,20 +15,18 @@ class Square:
             return self.result
         raise StopIteration
 
-def square_gen(number: int):
 
+def square_gen(number: int):
     for num in range(number):
         yield num ** 2
 
 
-square =(num ** 2 for num in range(5))
+square = (num ** 2 for num in range(5))
 for num in square:
     print(num, end="\n")
-
 
 square = Square(3)
 for i_value in square:
     print(i_value)
 
-
-
+# зачёт!
