@@ -1,25 +1,43 @@
 import random
 
+
 class KillError(Exception):
     name = "KillError"
+
     def __str__(self):
         return self.name
+
+
 class DrunkError(Exception):
     name = "DrunkError"
+
+    # TODO, лишний аргумент =) В таком случае метод str нужен.
+    #  К имени класса можно обратиться через __class__.__name__ =)
+
     def __str__(self):
         return self.name
+
+
 class CarCrashError(Exception):
     name = "CarCrashError"
+
     def __str__(self):
         return self.name
+
+
 class GluttonyError(Exception):
     name = "GluttonyError"
+
     def __str__(self):
         return self.name
+
+
 class DepressionError(Exception):
     name = "DepressionError"
+
     def __str__(self):
         return self.name
+
 
 # TODO, предлагаю создавать в этом месте классы KillError, DrunkError, CarCrashError, GluttonyError, DepressionError.
 #  Которые были бы с родительским классом Exception.
@@ -41,6 +59,11 @@ def one_day():
 
 
 # , таким образом храним в списке текст. А как хранить классы? =)
+
+# TODO, если убрать создание объектов классов ниже, то ошибки не будет.
+#  Получилось, что мы должны хранить классы в списке err, но хранили объекты классов.
+#  Но сами классы при этом существовать перестали, т.к. объекты классов имеют названия классов. %)
+#  Получилось немного запутанным. Выход такой: не использовать для объектов классов названия классов =)
 KillError = KillError()
 DrunkError = DrunkError()
 CarCrashError = CarCrashError()
