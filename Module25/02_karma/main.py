@@ -1,19 +1,30 @@
 import random
 
+class KillError(Exception):
+    name = "KillError"
+    def __str__(self):
+        return self.name
+class DrunkError(Exception):
+    name = "DrunkError"
+    def __str__(self):
+        return self.name
+class CarCrashError(Exception):
+    name = "CarCrashError"
+    def __str__(self):
+        return self.name
+class GluttonyError(Exception):
+    name = "GluttonyError"
+    def __str__(self):
+        return self.name
+class DepressionError(Exception):
+    name = "DepressionError"
+    def __str__(self):
+        return self.name
 
 # TODO, предлагаю создавать в этом месте классы KillError, DrunkError, CarCrashError, GluttonyError, DepressionError.
 #  Которые были бы с родительским классом Exception.
 #  Стоит определить в них текст ошибки, реализовав возврат в методе __str__.
 #  Метод init буде не нужен =)
-class Error:
-
-    def __init__(self, name):
-        self.name = name
-
-    def __str__(self):
-        return self.name
-
-
 def one_day():
     number = random.randint(1, 10)
     # , эта функция ловить ошибки не должна.
@@ -30,11 +41,11 @@ def one_day():
 
 
 # , таким образом храним в списке текст. А как хранить классы? =)
-KillError = Error("KillError")
-DrunkError = Error("DrunkError")
-CarCrashError = Error("CarCrashError")
-GluttonyError = Error("GluttonyError")
-DepressionError = Error("DepressionError")
+KillError = KillError()
+DrunkError = DrunkError()
+CarCrashError = CarCrashError()
+GluttonyError = GluttonyError()
+DepressionError = DepressionError()
 err = [KillError, DrunkError, CarCrashError, GluttonyError, DepressionError]
 karma = 0
 
@@ -45,7 +56,7 @@ while karma < 500:
     # , было бы правильней ловить ошибки в этом месте и их же записывать в файл
 
     # TODO (KillError, DrunkError) - таким образом ловим 2 ошибки. Предлагаю ловить только те ошибки, что вызываем мы =)
-    # TODO, файл с ошибками называется err и одна ошибка называется err.
+    #  файл с ошибками называется err и одна ошибка называется err.
     #  Что-то одно стоит переименовать.
 
     except (KillError, DrunkError, CarCrashError, GluttonyError,
