@@ -9,7 +9,6 @@ class KillError(Exception):
 
 class DrunkError(Exception):
 
-
     #  лишний аргумент =) В таком случае метод str нужен.
     #  К имени класса можно обратиться через __class__.__name__ =)
 
@@ -83,3 +82,5 @@ while karma < 500:
             karma_log.write(
                 "Ошибка: {} \n".format(chek_error))  # , записывать в файл предлагаю при помощи форматирования =)
         print("Ошибка: {}".format(chek_error))
+
+# зачёт!
