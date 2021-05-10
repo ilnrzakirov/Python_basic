@@ -1,6 +1,10 @@
 import random
 
 
+# TODO, предлагаю создавать в этом месте классы KillError, DrunkError, CarCrashError, GluttonyError, DepressionError.
+#  Которые были бы с родительским классом Exception.
+#  Стоит определить в них текст ошибки, реализовав возврат в методе __str__.
+#  Метод init буде не нужен =)
 class Error:
 
     def __init__(self, name):
@@ -44,7 +48,8 @@ while karma < 500:
     # TODO, файл с ошибками называется err и одна ошибка называется err.
     #  Что-то одно стоит переименовать.
 
-    except (KillError, DrunkError, CarCrashError, GluttonyError, DepressionError) as chek_error:  # , предлагаю добавить синоним ( as err ) для ошибки и записывать её в лог тоже, вместо  Exception.
+    except (KillError, DrunkError, CarCrashError, GluttonyError,
+            DepressionError) as chek_error:  # , предлагаю добавить синоним ( as err ) для ошибки и записывать её в лог тоже, вместо  Exception.
         # , в идеале, необходимо ловить в группе ошибки из списка err. И записывать в лог их.
 
         # Tтрока получилась лишняя, записывать в файл необходимо ту ошибку, которую поймали.
