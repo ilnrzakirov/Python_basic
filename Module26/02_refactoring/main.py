@@ -5,6 +5,7 @@ list_2 = [3, 8, 4, 9]
 to_find = 56
 
 
+# TODO, вместо списков стоит попробовать принимать Iterable[int].
 def gen(list1: list, list2: list, number: int) -> Iterable[str]:  # , вместо None лучше Iterator[str].
     for x in list1:
         for y in list2:

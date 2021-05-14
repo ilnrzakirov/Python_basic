@@ -1,13 +1,15 @@
 from collections.abc import Iterable
 
 
+# TODO, возможно, возвращать лучше Type['QHofstadter'].
+#  Предварительно импортировав Type из модуля typing.
 
-def QHofstadter(qlist = list) -> Iterable [int]:
+def QHofstadter(qlist=list) -> Iterable[int]:
     qlist1 = qlist[:]
     n = 2
     while True:
         try:
-            q = qlist1[n - qlist1[n -1]] + qlist1[n - qlist1[n -2]]
+            q = qlist1[n - qlist1[n - 1]] + qlist1[n - qlist1[n - 2]]
             qlist1.append(q)
             n += 1
             yield q
