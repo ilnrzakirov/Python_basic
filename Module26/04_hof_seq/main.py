@@ -1,10 +1,11 @@
 from collections.abc import Iterable
+from typing import Type
 
 
 # TODO, возможно, возвращать лучше Type['QHofstadter'].
 #  Предварительно импортировав Type из модуля typing.
 
-def QHofstadter(qlist=list) -> Iterable[int]:
+def QHofstadter(qlist=list) -> Type["QHofstadter"]:
     qlist1 = qlist[:]
     n = 2
     while True:

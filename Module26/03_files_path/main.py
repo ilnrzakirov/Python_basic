@@ -19,7 +19,7 @@ def gen_files_path(find_catalog: str, catalog=os.path.abspath(os.sep)):
                     print("Пропускаем")
 
 
-# TODO, предлагаю запрашивать путь сразу целиком, не разделяя на папки.
+# , предлагаю запрашивать путь сразу целиком, не разделяя на папки.
 #path_list = ["Users", "Ilnur", "PycharmProjects", "python_basic", "module26"]
 path_folder = input("Введите путь для поиска: ")
 find = input("Введите папку для поиска")
