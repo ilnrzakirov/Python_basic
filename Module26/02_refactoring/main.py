@@ -1,14 +1,16 @@
+from collections.abc import Iterable
+
 list_1 = [2, 5, 7, 10]
 list_2 = [3, 8, 4, 9]
 to_find = 56
 
 
-def gen(list1: list, list2: list, number: int) -> None:  # TODO, вместо None лучше Iterator[str].
+def gen(list1: list, list2: list, number: int) -> Iterable[str]:  # , вместо None лучше Iterator[str].
     for x in list1:
         for y in list2:
-            yield x * y  # TODO, возврат получился лишний
+                         # , возврат получился лишний
             if x * y == number:
-                return  # TODO, в этом месте стоит возвращать результат при помощи yield
+                yield x * y # , в этом месте стоит возвращать результат при помощи yield
 
 
 result = gen(list_1, list_2, to_find)
