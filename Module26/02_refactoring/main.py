@@ -30,4 +30,4 @@ for item in result:
 #    if not can_continue:
 #        break
 
-# TODO провести рефакторинг кода
+#  провести рефакторинг кода

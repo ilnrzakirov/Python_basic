@@ -10,7 +10,7 @@ def gen_files_path(find_catalog: str, catalog=os.path.abspath(os.sep)):
         else:
             if path == find_catalog:
                 print(abs_path)
-                return abs_path  # TODO, только yield. =)
+                yield abs_path  # , только yield. =)
             else:
                 print(abs_path)
                 try:
@@ -20,6 +20,8 @@ def gen_files_path(find_catalog: str, catalog=os.path.abspath(os.sep)):
 
 
 # TODO, предлагаю запрашивать путь сразу целиком, не разделяя на папки.
-path_list = ["Users", "Ilnur", "PycharmProjects", "python_basic", "module26"]
-
-gen_files_path("04_hof_seq", catalog=os.path.abspath(os.sep) + os.sep.join(path_list) + os.sep)
+#path_list = ["Users", "Ilnur", "PycharmProjects", "python_basic", "module26"]
+path_folder = input("Введите путь для поиска: ")
+find = input("Введите папку для поиска")
+#gen_files_path("04_hof_seq", catalog=os.path.abspath(os.sep) + os.sep.join(path_list) + os.sep)
+gen_files_path(find, path_folder)
