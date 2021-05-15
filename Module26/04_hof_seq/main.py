@@ -6,8 +6,11 @@ from typing import Type
 #  Предварительно импортировав Type из модуля typing.
 
 
+
 # TODO, предлагаю попробовать решить задание классов итератором и описать вычисления в методе __next__.
 #  В таком случае, цикл while не потребуется. =)
+class QHof:
+    pass
 
 def QHofstadter(qlist=list) -> Type["QHofstadter"]:
     qlist1 = qlist[:]
