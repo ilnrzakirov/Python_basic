@@ -1,9 +1,9 @@
 import os
 
 
-def code_counter():
+def code_counter(path):
     result = 0
-    directory = os.getcwd()  # директория для подсчета
+    directory = path  # директория для подсчета
     for path in os.listdir(directory):
         new_path = directory + "".join(path)
         if str(new_path).endswith(".py"):
@@ -21,6 +21,6 @@ def code_counter():
 # TODO, директорию необходимо запросить у пользователя и передать в функцию.
 #  Максимальный уровень вложенности кода не должен превышать 3. Возможно, стоит разбить нашу функцию на несколько функций. =)
 
+# path = input("Введите директорию для подсчета: ")
 
-
-print(code_counter())
+print(code_counter(path=os.getcwd()))
