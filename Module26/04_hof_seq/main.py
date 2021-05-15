@@ -23,19 +23,15 @@ class QHof:
         return q
 
 def QHofstadter(qlist=list) -> Type["QHofstadter"]:
-    qlist1 = qlist[:]
-    # TODO, список в решении лишний.
+    # , сисок в решении лишний.
     #  Генератор не должен хранить в себе массивы с данными =)
     n = 2
     while True:
-        # TODO, блок try/except лишний.
-        try:
-            q = qlist1[n - qlist1[n - 1]] + qlist1[n - qlist1[n - 2]]
-            qlist1.append(q)
-            n += 1
-            yield q
-        except IndexError:
-            return
+        # , блок try/except лишний.
+        q = qlist[n - qlist[n - 1]] + qlist[n - qlist[n - 2]]
+        qlist.append(q)
+        n += 1
+        yield q
 
 
 #qlist = [1, 1]
