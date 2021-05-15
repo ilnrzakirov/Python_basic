@@ -5,13 +5,13 @@ list_2 = [3, 8, 4, 9]
 to_find = 56
 
 
-# TODO, вместо списков стоит попробовать принимать Iterable[int].
+# , вместо списков стоит попробовать принимать Iterable[int].
 def gen(list1: list, list2: list, number: int) -> Iterable[str]:  # , вместо None лучше Iterator[str].
     for x in list1:
         for y in list2:
-                         # , возврат получился лишний
+            # , возврат получился лишний
             if x * y == number:
-                yield x * y # , в этом месте стоит возвращать результат при помощи yield
+                yield x * y  # , в этом месте стоит возвращать результат при помощи yield
 
 
 result = gen(list_1, list_2, to_find)
@@ -31,3 +31,5 @@ for item in result:
 #        break
 
 #  провести рефакторинг кода
+
+# зачёт!
