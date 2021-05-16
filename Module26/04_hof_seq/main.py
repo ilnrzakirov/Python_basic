@@ -19,6 +19,7 @@ class QHof:
 
     def __next__(self):
         q = self.Q[- self.Q[-1]] + self.Q[-self.Q[-2]]
+        # TODO, по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.
         self.Q.append(q)
         return q
 
