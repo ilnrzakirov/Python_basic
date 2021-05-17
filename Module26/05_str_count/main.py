@@ -1,6 +1,9 @@
 import os
 
-
+# TODO директория 'C:\\...\\ilnur_zakirov\\python_basic\\Module26\\05_str_count'
+#  Пока что превратилась в 'C:\\...\\ilnur_zakirov\\python_basic\\Module26\\05_str_countmain.py'
+#  Предлагаю объединять директории при помощи метода join модуля os.
+#  К сожалению, строковый метод join в данном задании не лишний
 def code_counter(path):
     result = 0
     directory = path  # директория для подсчета
@@ -12,6 +15,7 @@ def code_counter(path):
 
 def code_counter_next(path):
     result = 0
+    # TODO, str возможно лишнее =)
     with open(str(path), "r") as file:
         # , глобальная переменная получилась лишней.
         for line in file:
