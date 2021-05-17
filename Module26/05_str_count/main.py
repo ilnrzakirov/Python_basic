@@ -9,7 +9,6 @@ def code_counter(path):
     directory = path  # директория для подсчета
     for ipath in os.listdir(directory):
         new_path = os.path.join(directory, ipath)
-        print(new_path)
         if str(new_path).endswith(".py"):
             result += code_counter_next(ipath)
     return result
@@ -26,11 +25,9 @@ def code_counter_next(path):
                 if not line.startswith("#"):
                     result += 1
     return result
-
-
 # , директорию необходимо запросить у пользователя и передать в функцию.
 #  Максимальный уровень вложенности кода не должен превышать 3. Возможно, стоит разбить нашу функцию на несколько функций. =)
 
-# path = input("Введите директорию для подсчета: ")
+path = input("Введите директорию для подсчета: ")
 
-print(code_counter(path=os.getcwd()))
+print(code_counter(path=path))
