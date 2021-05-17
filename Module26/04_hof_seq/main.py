@@ -6,7 +6,6 @@ from typing import Type
 #  Предварительно импортировав Type из модуля typing.
 
 
-
 # , предлагаю попробовать решить задание классов итератором и описать вычисления в методе __next__.
 #  В таком случае, цикл while не потребуется. =)
 class QHof:
@@ -15,6 +14,9 @@ class QHof:
         self.Q = [1, 1]
 
     def __iter__(self):
+        # TODO, стоит добавить переменную счётчик равную "0"
+        #  Далее в next первый элемент будет равен "переменная счётчик" + 1 - предыдущее значение
+        #  второй элемент будет равен "переменная счётчик" + 1 - ПРЕДпредыдущее значение
         return self
 
     def __next__(self):
@@ -22,6 +24,7 @@ class QHof:
         # TODO, по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.
         self.Q.append(q)
         return q
+
 
 def QHofstadter(qlist=list) -> Type["QHofstadter"]:
     # , сисок в решении лишний.
@@ -34,10 +37,6 @@ def QHofstadter(qlist=list) -> Type["QHofstadter"]:
         n += 1
         yield q
 
-
-#qlist = [1, 1]
-#for item in QHofstadter(qlist):
+# qlist = [1, 1]
+# for item in QHofstadter(qlist):
 #    print(item)
-
-
-
