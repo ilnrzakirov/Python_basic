@@ -11,8 +11,8 @@ def code_counter(path):
     for ipath in os.listdir(directory):
         new_path = os.path.join(directory, ipath)
         if str(new_path).endswith(".py"):
-            result += code_counter_next(ipath)
-            # TODO, в этом месте стоит сразу передавать ipath
+            result += code_counter_next(new_path)
+            # , в этом месте стоит сразу передавать ipath
             #  иначе, если файл находится не в текущей директории, то наша функция его не видит.
     return result
 
@@ -28,10 +28,9 @@ def code_counter_next(path):
             # TODO, в условном операторе ниже стоит попробовать убрать лишний символ "\n" из строки при помощи строкового метода.
             #  иначе, строка с одним символом "\n" считается не пустой.
             if line:
-                if not line.startswith("#"):
+                if not line.strip().startswith("#") and line != "\n":
                     result += 1
     return result
-
 
 # , директорию необходимо запросить у пользователя и передать в функцию.
 #  Максимальный уровень вложенности кода не должен превышать 3. Возможно, стоит разбить нашу функцию на несколько функций. =)
