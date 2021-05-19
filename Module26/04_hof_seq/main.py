@@ -24,7 +24,8 @@ class QHof:
         q1 = self.count + 1 - self.Q[-1]
         q2 = self.count + 1 - self.Q[-2]
 #        q = self.Q[- self.Q[-1]] + self.Q[-self.Q[-2]]
-        # , по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.
+        # , по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.\
+        # TODO, по идее q1 и q2 это индексы списка self.Q, предлагаю попробовать добавлять только их сумму. Один раз.
         self.Q.append(q1)
         self.Q.append(q2)
 
@@ -42,6 +43,6 @@ def QHofstadter(qlist=list) -> Type["QHofstadter"]:
         n += 1
         yield q
 
-# qlist = [1, 1]
-# for item in QHofstadter(qlist):
-#    print(item)
+qlist = [1, 1]
+for item in QHofstadter(qlist):
+   print(item)
