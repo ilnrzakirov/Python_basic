@@ -12,18 +12,23 @@ class QHof:
 
     def __init__(self):
         self.Q = [1, 1]
+        self.count = 0
 
     def __iter__(self):
-        # TODO, стоит добавить переменную счётчик равную "0"
+        # , стоит добавить переменную счётчик равную "0"
         #  Далее в next первый элемент будет равен "переменная счётчик" + 1 - предыдущее значение
         #  второй элемент будет равен "переменная счётчик" + 1 - ПРЕДпредыдущее значение
         return self
 
     def __next__(self):
-        q = self.Q[- self.Q[-1]] + self.Q[-self.Q[-2]]
-        # TODO, по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.
-        self.Q.append(q)
-        return q
+        q1 = self.count + 1 - self.Q[-1]
+        q2 = self.count + 1 - self.Q[-2]
+#        q = self.Q[- self.Q[-1]] + self.Q[-self.Q[-2]]
+        # , по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.
+        self.Q.append(q1)
+        self.Q.append(q2)
+
+        return self.Q
 
 
 def QHofstadter(qlist=list) -> Type["QHofstadter"]:
