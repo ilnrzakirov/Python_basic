@@ -23,11 +23,10 @@ class QHof:
     def __next__(self):
         q1 = self.count + 1 - self.Q[-1]
         q2 = self.count + 1 - self.Q[-2]
-#        q = self.Q[- self.Q[-1]] + self.Q[-self.Q[-2]]
+        q = q1 + q2
         # , по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.\
-        # TODO, по идее q1 и q2 это индексы списка self.Q, предлагаю попробовать добавлять только их сумму. Один раз.
-        self.Q.append(q1)
-        self.Q.append(q2)
+        # , по идее q1 и q2 это индексы списка self.Q, предлагаю попробовать добавлять только их сумму. Один раз.
+        self.Q.append(q)
 
         return self.Q
 
