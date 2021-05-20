@@ -11,8 +11,9 @@ from typing import Type
 class QHof:
 
     def __init__(self):
+        # TODO, в этот класс стоит передавать список.
         self.Q = [1, 1]
-        self.count = 0
+        self.count = 0 # TODO, предлагаю перенести в __iter__
 
     def __iter__(self):
         # , стоит добавить переменную счётчик равную "0"
@@ -21,14 +22,16 @@ class QHof:
         return self
 
     def __next__(self):
+        # TODO, если длина списка не равна 2 или список не [1, 1],
+        #  стоит выйти из последовательности при помощи вызова StopIteration.
         q1 = self.count + 1 - self.Q[-1]
         q2 = self.count + 1 - self.Q[-2]
-        q = q1 + q2
+        q = q1 + q2  # TODO, q1 и q2 это индексы списка self.Q =) Предлагаю искать элементы и складывать их.
         # , по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.\
         # , по идее q1 и q2 это индексы списка self.Q, предлагаю попробовать добавлять только их сумму. Один раз.
         self.Q.append(q)
-
-        return self.Q
+        # TODO, стоит увеличивать count на 1.
+        return self.Q  # TODO, возвращать предлагаю элемент который добавили в список
 
 
 def QHofstadter(qlist=list) -> Type["QHofstadter"]:
