@@ -13,7 +13,7 @@ class QHof:
     def __init__(self, number_list: list):
         # , в этот класс стоит передавать список.
         self.Q = number_list
-         # , предлагаю перенести в __iter__
+        # , предлагаю перенести в __iter__
 
     def __iter__(self):
         self.count = 0
@@ -23,10 +23,11 @@ class QHof:
         return self
 
     def __next__(self):
-        if len(self.Q) != 2 or self.Q != [1,1]:
+        if len(self.Q) != 2 or self.Q != [1, 1]:
             raise StopIteration
         # , если длина списка не равна 2 или список не [1, 1],
         #  стоит выйти из последовательности при помощи вызова StopIteration.
+        # TODO, следующие действия стоит производить, если текущая длина списка меньше или равна текущему элементу + 1 =)
         q1 = self.count + 1 - self.Q[-1]
         q2 = self.count + 1 - self.Q[-2]
         q = self.Q[q1] + self.Q[q2]  # , q1 и q2 это индексы списка self.Q =) Предлагаю искать элементы и складывать их.
@@ -38,10 +39,7 @@ class QHof:
         return q  # , возвращать предлагаю элемент который добавили в список
 
 
-
-
 qlist = [1, 1]
 Q = QHof(qlist)
 for item in Q:
     print(item)
-
