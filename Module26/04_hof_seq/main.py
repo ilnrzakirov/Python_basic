@@ -33,7 +33,7 @@ class QHof:
         #  стоит выйти из последовательности при помощи вызова StopIteration.
         # , следующие действия стоит производить, если текущая длина списка меньше или равна текущему элементу + 1 =)
 
-        if len(self.Q) <= self.count + 1:
+        if len(self.Q) <= self.count + 1:  # TODO, +1 делаем чуть выше. Если убрать в этом месте, то расчёт получится правильным.
             # TODO, У нас есть алгоритм находения числа
             #  Q(n) = Q(n−Q(n−1))+Q(n−Q(n−2))
             #  В котором Q это наша self.Q, а n это self.count
@@ -43,11 +43,10 @@ class QHof:
             #  тогда формула будет
             #  Q(n) = Q(n − q1) + Q(n − q2)
 
-
             q1 = self.Q[self.count - 1]
             q2 = self.Q[self.count - 2]
             q = self.Q[self.count - q1] + self.Q[self.count - q2]
-            #t = self.Q[self.count - self.Q[self.count  - 1]] + self.Q[self.count - self.Q[self.count - 2]]
+            # t = self.Q[self.count - self.Q[self.count  - 1]] + self.Q[self.count - self.Q[self.count - 2]]
             self.Q.append(q)
             # , q1 и q2 это индексы списка self.Q =) Предлагаю искать элементы и складывать их.
             # , по идее, за 1 раз необходимо создавать 2 числа и 2 числа добавлять в список.\
@@ -60,5 +59,7 @@ class QHof:
 
 qlist = [1, 1]
 Q = QHof(qlist)
+# TODO, предлагаю добавить выход из цикла, чтобы было лучше видно, какие элементы выводятся.
+#  И возможно, лучше выводить в одну строку.
 for item in Q:
     print(item)
