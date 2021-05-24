@@ -1,6 +1,5 @@
 import os
 
-
 def gen_files_path(find_catalog: str, catalog=os.path.abspath(os.sep)):
     for path in os.listdir(catalog):
         # , возможно, конкатенация и join получились лишними.
