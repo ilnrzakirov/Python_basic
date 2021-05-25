@@ -17,8 +17,9 @@ def gen_files_path(find_catalog: str, catalog):
             # , если директория, то получаем её базовое название и сравниваем с find_catalog.
             #  Если совпало, в таком случае работу генератора стоит завершить =)
             #  Если не совпало запускаем цикл по нашей функции gen_files_path, т.к. она итерируемая =)
-            print(os.path.basename(abs_path))
-            if os.path.basename(abs_path) == find_catalog:
+            dir = os.path.basename(abs_path)
+            print(dir)
+            if dir == find_catalog:
                 # , print лишний
                 return abs_path  # , только yield. =)
             else:
