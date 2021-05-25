@@ -18,6 +18,8 @@ def gen_files_path(find_catalog: str, catalog):
             #  Если совпало, в таком случае работу генератора стоит завершить =)
             #  Если не совпало запускаем цикл по нашей функции gen_files_path, т.к. она итерируемая =)
             print(os.path.basename(abs_path))
+            # TODO, дело в том, что basename у abs_path это путь до папки C:\Users...
+            #  а find_catalog это сама папка => 03_files_path =)
             if os.path.basename(abs_path) == find_catalog:
                 # , print лишний
                 return abs_path  # , только yield. =)
@@ -25,6 +27,7 @@ def gen_files_path(find_catalog: str, catalog):
                 for path in gen_files_path(find_catalog, abs_path):
                     yield path
                     # , в этом месте стоит возвращать path при помощи yield
+
 
 # , предлагаю запрашивать путь сразу целиком, не разделяя на папки.
 path_folder = input("Введите путь для поиска: ")
