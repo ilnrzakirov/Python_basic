@@ -6,7 +6,7 @@ def gen_files_path(find_catalog: str, catalog):
     for path in os.listdir(catalog):
         # , возможно, конкатенация и join получились лишними.
         #  Предлагаю работать сразу с os.path.join
-        abs_path = os.path.join(catalog, path) + os.sep
+        abs_path = os.path.join(catalog, path)
         print(abs_path)
         if os.path.isfile(abs_path):
             # , print лишний, функция должна возвращать элемент.
@@ -17,11 +17,11 @@ def gen_files_path(find_catalog: str, catalog):
             # , если директория, то получаем её базовое название и сравниваем с find_catalog.
             #  Если совпало, в таком случае работу генератора стоит завершить =)
             #  Если не совпало запускаем цикл по нашей функции gen_files_path, т.к. она итерируемая =)
-            dir = os.path.basename(abs_path)
+            dir = os.path.split(fr"{abs_path}")[-1]
             print(dir)
             if dir == find_catalog:
-            # TODO, дело в том, что basename у abs_path это путь до папки C:\Users...
-            #  а find_catalog это сама папка => 03_files_path =)
+                # TODO, дело в том, что basename у abs_path это путь до папки C:\Users...
+                #  а find_catalog это сама папка => 03_files_path =)
                 # , print лишний
                 return abs_path  # , только yield. =)
             else:
@@ -32,7 +32,7 @@ def gen_files_path(find_catalog: str, catalog):
 
 # , предлагаю запрашивать путь сразу целиком, не разделяя на папки.
 path_folder = input("Введите путь для поиска: ")
-find = input("Введите папку для поиска")
+find = input("Введите папку для поиска: ")
 for item in gen_files_path(find_catalog=find, catalog=path_folder):
     print(item)
 
