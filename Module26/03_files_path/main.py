@@ -20,7 +20,7 @@ def gen_files_path(find_catalog: str, catalog):
             dir = os.path.split(fr"{abs_path}")[-1]
             print(dir)
             if dir == find_catalog:
-                # TODO, дело в том, что basename у abs_path это путь до папки C:\Users...
+                # , дело в том, что basename у abs_path это путь до папки C:\Users...
                 #  а find_catalog это сама папка => 03_files_path =)
                 # , print лишний
                 return abs_path  # , только yield. =)
@@ -36,6 +36,8 @@ find = input("Введите папку для поиска: ")
 for item in gen_files_path(find_catalog=find, catalog=path_folder):
     print(item)
 
-# TODO Введите путь для поиска: C:\...\ilnur_zakirov\python_basic
+#  Введите путь для поиска: C:\...\ilnur_zakirov\python_basic
 #  Введите папку для поиска 03_files_path
 #  Пока что программа не выводит ничего =) Предлагаю добавить вывод возвратов Генератора и проверить.
+
+# зачёт!
