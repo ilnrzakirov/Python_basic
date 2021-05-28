@@ -6,10 +6,10 @@ def how_are_you(func: Callable)-> Callable:
     Декаратор спрашивающий самочувствие пользователя =)
     :return: Callable
     """
-    def wrapper()-> Any:  # TODO, функция должна принимать на вход арги и кварги и передавать их в func =)
+    def wrapper(*args, **kwargs)-> Any:  # TODO, функция должна принимать на вход арги и кварги и передавать их в func =)
         input("Как дела: ")
         print("А у меня не очень! Ладно, держи свою функцию")
-        return func()
+        return func(*args, **kwargs)
     return wrapper
 
 
