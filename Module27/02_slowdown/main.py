@@ -3,14 +3,16 @@ from typing import Callable, Any
 from time import sleep
 
 
-def how_are_you(func: Callable)-> Callable:
+def how_are_you(func: Callable) -> Callable:
     """
     Декаратор спрашивающий самочувствие пользователя =)
     :return: Callable
     """
-    def wrapper(*args, **kwargs)-> Any: # TODO, функция должна принимать на вход арги и кварги и передавать их в func =)
+
+    def wrapper(*args, **kwargs) -> Any:  # , функция должна принимать на вход арги и кварги и передавать их в func =)
         time.sleep(5)
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -20,3 +22,5 @@ def test():
 
 
 test()
+
+# зачёт!
