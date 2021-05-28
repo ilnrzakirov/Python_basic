@@ -9,12 +9,18 @@ def debug(func: Callable)-> Callable:
     """
     @functools.wraps(func)
     def wrapper(*args, **kwargs)-> Any:
+        arg = []
+        kwarg = []
+        for elem in args:
+            arg.append(elem)
+        for key, value in kwargs.items():
+            kwarg.append({key: value})
         # TODO, предлагаю попробовать создать списки из кваргов и аргов
         #  и выводить при помощи именно их =) Таким образом, сделаем вывод более дружелюбным.
         if args and not kwargs:
-            print(f"Вызывается: {func.__name__} {args}")
+            print("Вызывается: {func} {arg}".format(func = func.__name__, arg =arg ))
         else:
-            print(f"Вызывается: {func.__name__} {args} {kwargs}")
+            print("Вызывается: {func} {arg} {kwarg}".format(func=func.__name__, arg=arg, kwarg=kwarg))
         result = func(*args, **kwargs)
         print(f"{func.__name__} вернула: {result}")
         print(f"{result} \n")
