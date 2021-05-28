@@ -8,7 +8,7 @@ def how_are_you(func: Callable)-> Callable:
     Декаратор спрашивающий самочувствие пользователя =)
     :return: Callable
     """
-    def wrapper()-> Any:
+    def wrapper()-> Any: # TODO, функция должна принимать на вход арги и кварги и передавать их в func =)
         time.sleep(5)
         return func()
     return wrapper

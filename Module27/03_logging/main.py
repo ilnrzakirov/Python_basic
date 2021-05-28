@@ -13,7 +13,8 @@ def logging(func: Callable)-> Callable:
     @functools.wraps(func)
     def wrapper(*args, **kwargs)-> Any:
         print(f"\n Вызываемая функция {func.__name__} \n Документация: \n {func.__doc__}")
-        with open("function_errors.log", "a") as log_file:
+        with open("function_errors.log", "a") as log_file:  # TODO, предлагаю открывать файл, только если ошибка.
+            # TODO, при открытии файла, стоит открывать его с определённой кодировкой. Какой? =)
             try:
                 result = func(*args, **kwargs)
                 return result

@@ -9,6 +9,8 @@ def debug(func: Callable)-> Callable:
     """
     @functools.wraps(func)
     def wrapper(*args, **kwargs)-> Any:
+        # TODO, предлагаю попробовать создать списки из кваргов и аргов
+        #  и выводить при помощи именно их =) Таким образом, сделаем вывод более дружелюбным.
         if args and not kwargs:
             print(f"Вызывается: {func.__name__} {args}")
         else:
