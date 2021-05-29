@@ -26,4 +26,4 @@ class Manager_file:
 
 
 with Manager_file("text.txt", "w") as file:
-    file.eror("Hello ")  # TODO как правильно произвести запись в файл?
+    file.write("Hello ")  #  как правильно произвести запись в файл?
