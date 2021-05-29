@@ -1,8 +1,6 @@
-
-
 class Manager_file:
     # , стоит запрашивать дополнительно "режим" для открытия файла.
-    def __init__(self, path: str, metod: str)-> None:
+    def __init__(self, path: str, metod: str) -> None:
         self.name = path
         self.metod = metod
 
@@ -17,7 +15,7 @@ class Manager_file:
         return self.file
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        # TODO, стоит ловить ошибки.
+        # , стоит ловить ошибки.
         #  Если поймали, то пробуем закрыть файл и возвращаем Истину =)
         if exc_type:
             print(exc_type)
@@ -26,4 +24,6 @@ class Manager_file:
 
 
 with Manager_file("text.txt", "w") as file:
-    file.write("Hello ")  #  как правильно произвести запись в файл?
+    file.write("Hello ")  # как правильно произвести запись в файл?
+
+# зачёт!
