@@ -1,24 +1,26 @@
 from typing import Callable, Any
 import functools
 
-def debug(func: Callable)-> Callable:
+
+def debug(func: Callable) -> Callable:
     """
     Функция дебагер
     :param func: Callable
     :return: Callable
     """
+
     @functools.wraps(func)
-    def wrapper(*args, **kwargs)-> Any:
+    def wrapper(*args, **kwargs) -> Any:
         arg = []
         kwarg = []
         for elem in args:
             arg.append(elem)
         for key, value in kwargs.items():
             kwarg.append(f"{key}={value}")
-        # TODO, предлагаю попробовать создать списки из кваргов и аргов
+        # , предлагаю попробовать создать списки из кваргов и аргов
         #  и выводить при помощи именно их =) Таким образом, сделаем вывод более дружелюбным.
         if args and not kwargs:
-            print("Вызывается: {func} {arg}".format(func = func.__name__, arg =arg ))
+            print("Вызывается: {func} {arg}".format(func=func.__name__, arg=arg))
         elif kwargs and not args:
             print("Вызывается: {func} {kwarg}".format(func=func.__name__, kwarg=kwarg))
         else:
@@ -31,7 +33,7 @@ def debug(func: Callable)-> Callable:
 
 
 @debug
-def greeting(name, age=None)-> str:
+def greeting(name, age=None) -> str:
     if age:
         return "Ого, {name}! Тебе уже {age} лет, ты быстро растешь!".format(name=name, age=age)
     else:
@@ -41,3 +43,5 @@ def greeting(name, age=None)-> str:
 greeting("Том")
 greeting("Миша", age=100)
 greeting(name="Катя", age=16)
+
+# зачёт!
