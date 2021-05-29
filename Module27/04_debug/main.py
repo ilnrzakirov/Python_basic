@@ -19,6 +19,8 @@ def debug(func: Callable)-> Callable:
         #  и выводить при помощи именно их =) Таким образом, сделаем вывод более дружелюбным.
         if args and not kwargs:
             print("Вызывается: {func} {arg}".format(func = func.__name__, arg =arg ))
+        elif kwargs and not args:
+            print("Вызывается: {func} {kwarg}".format(func=func.__name__, kwarg=kwarg))
         else:
             print("Вызывается: {func} {arg} {kwarg}".format(func=func.__name__, arg=arg, kwarg=kwarg))
         result = func(*args, **kwargs)
