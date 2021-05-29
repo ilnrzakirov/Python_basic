@@ -14,7 +14,7 @@ def debug(func: Callable)-> Callable:
         for elem in args:
             arg.append(elem)
         for key, value in kwargs.items():
-            kwarg.append({key: value})
+            kwarg.append(f"{key}={value}")
         # TODO, предлагаю попробовать создать списки из кваргов и аргов
         #  и выводить при помощи именно их =) Таким образом, сделаем вывод более дружелюбным.
         if args and not kwargs:
