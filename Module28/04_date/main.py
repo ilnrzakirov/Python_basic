@@ -11,7 +11,7 @@ class Date:
 
     # , стоит добавить метод __str__ и возвращать дату в удобном формате =)
     def __str__(self)-> str:
-        return  (f"Год: {self.year}, Месяц: {self.mont}, День: {self.day}")
+        return  (f"Год: {self.year}, Месяц: {self.mont}, День: {self.day}")  # TODO () получились лишними.
 
     @classmethod
     def is_date_valid(cls, date_string: str)-> bool:
@@ -27,6 +27,7 @@ class Date:
         year = res.year
         month = res.month
         day = res.day
+        # TODO, в целом правильно, только на Date, а cls.
         return Date(year=year, mont=month, day=day)
         # , стоит добавить возврат себя с нужными данными, которые мы передаём в init. =)
         #  Если поправить init, то нужно будет разбить дату на 3 параметра и предавать их при возврате себя.

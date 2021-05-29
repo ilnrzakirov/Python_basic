@@ -12,7 +12,7 @@ class Manager_file:
         #  Например, при помощи "w".
         try:
             self.file = open(self.name, self.metod)
-        except:
+        except:  # Правильно except Exception.
             self.file = open(self.name, "w")
         return self.file
 
@@ -26,4 +26,4 @@ class Manager_file:
 
 
 with Manager_file("text.txt", "w") as file:
-    file.eror("Hello ")
+    file.eror("Hello ")  # TODO как правильно произвести запись в файл?
