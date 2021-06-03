@@ -45,6 +45,9 @@ class Triangle:
         s = 0.5 * self.length * self.h
         return s
 
+
+    # TODO таким образом и метод класса и аргумент имеют одинаковое название => length.
+    #  Стоит добавить к названию аргумента "_" =)
 #    @property
 #    def length(self):
 #        return self.length

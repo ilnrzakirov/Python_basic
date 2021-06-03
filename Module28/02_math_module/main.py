@@ -46,3 +46,5 @@ res1 = MyMath.len_circle(r=5)
 res2 = MyMath.square_circle(r=6)
 print(res1)
 print(res2)
+
+# зачёт!
