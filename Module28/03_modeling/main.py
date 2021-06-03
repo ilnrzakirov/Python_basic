@@ -16,11 +16,11 @@ class Square:
 
     @property
     def length(self) -> float:
-        return self.length # TODO, таким образом возвращаем метод. Аргумент класса имеет немного другое название.
+        return self._length # TODO, таким образом возвращаем метод. Аргумент класса имеет немного другое название.
 
     @length.setter
     def length(self, length: float) -> None:
-        self.length = length  # TODO, таким образом переопределяем метод, предлагаю добавить "_" к названию после self. =)
+        self._length = length  # TODO, таким образом переопределяем метод, предлагаю добавить "_" к названию после self. =)
 
 
 class FigureSquareMixin:
@@ -51,11 +51,11 @@ class Triangle:
     #  Стоит добавить к названию аргумента "_" =)
     @property
     def length(self):
-        return self.length  # TODO, таким образом возвращаем метод. Аргумент класса имеет немного другое название.
+        return self._length  # TODO, таким образом возвращаем метод. Аргумент класса имеет немного другое название.
 
     @length.setter
     def length(self, length)-> None:
-        self.length = length  # TODO, таким образом переопределяем метод, предлагаю добавить "_" к названию после self. =)
+        self._length = length  # TODO, таким образом переопределяем метод, предлагаю добавить "_" к названию после self. =)
 
 
 class Pyramid(Triangle, Square, FigureSquareMixin):
