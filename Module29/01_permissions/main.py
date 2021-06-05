@@ -3,18 +3,18 @@ from collections.abc import Callable
 
 
 def check_permission(user: str) -> Callable:
-    def decarator(func: Callable) -> Callable:
+    def decorator(func: Callable) -> Callable:
 
         @functools.wraps(func)
         def wrapper():
             # TODO, в данном случае, права будут только у админа.
             #  Предлагаю ориентироваться на наличие пользователя в списке user_permissions.
-            if user == "admin":
-                func()
+            if user in user_permissions:
+                return func()
             else:
                 print(f"У пользователя {user} недостаточно прав, что бы вызвать функцию {func.__name__}  ")
         return wrapper
-    return decarator
+    return decorator
 
 
 user_permissions = ['admin']
