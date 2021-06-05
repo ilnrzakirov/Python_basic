@@ -1,19 +1,18 @@
 from collections.abc import Callable
 import functools
-from flask import Flask  # TODO, пока то, лишний импорт
+# , пока то, лишний импорт
 
-app = Flask(__name__)
-# TODO, предлагаю создать пустой словарь и заполнять его внутри декоратора.
+app = dict()
+# , предлагаю создать пустой словарь и заполнять его внутри декоратора.
 #  Исходя из нашего примера, ключом будет "//", а значением наша функция.
 
 
 def callback(command: str) -> Callable:
     def decorate(func: Callable) -> Callable:
-
+        app[command] = func
         @functools.wraps(func)
         def wrapper():
-            if command == "//":
-                example()
+            return func()
         return wrapper
     return decorate
 
@@ -26,7 +25,7 @@ def example():
 
 route = app.get('//')
 if route:
-    response = route(example)
+    response = route()
     print('Ответ:', response)
 else:
     print('Такого пути нет')
