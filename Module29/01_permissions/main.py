@@ -7,6 +7,8 @@ def check_permission(user: str) -> Callable:
 
         @functools.wraps(func)
         def wrapper():
+            # TODO, в данном случае, права будут только у админа.
+            #  Предлагаю ориентироваться на наличие пользователя в списке user_permissions.
             if user == "admin":
                 func()
             else:

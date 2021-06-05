@@ -1,8 +1,10 @@
 from collections.abc import Callable
 import functools
-from flask import Flask
+from flask import Flask  # TODO, пока то, лишний импорт
 
 app = Flask(__name__)
+# TODO, предлагаю создать пустой словарь и заполнять его внутри декоратора.
+#  Исходя из нашего примера, ключом будет "//", а значением наша функция.
 
 
 def callback(command: str) -> Callable:
