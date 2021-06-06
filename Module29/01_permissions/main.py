@@ -13,7 +13,9 @@ def check_permission(user: str) -> Callable:
                 return func()
             else:
                 print(f"У пользователя {user} недостаточно прав, что бы вызвать функцию {func.__name__}  ")
+
         return wrapper
+
     return decorator
 
 
@@ -32,3 +34,5 @@ def add_comment():
 
 delete_site()
 add_comment()
+
+# зачёт!
