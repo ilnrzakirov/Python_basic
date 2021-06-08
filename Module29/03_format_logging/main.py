@@ -36,7 +36,7 @@ def log_methods(format: str) -> Callable:
 @log_methods("b d Y - H:M:S")
 class A:
     def test_sum_1(self) -> int:
-        print('test sum 1')
+        print('Тут метод test sum 1')
         number = 100
         result = 0
         for _ in range(number + 1):
@@ -52,7 +52,7 @@ class B(A):
         print("Наследник test sum 1")
 
     def test_sum_2(self):
-        print("test sum 2")
+        print("Тут меотод test sum 2")
         number = 200
         result = 0
         for _ in range(number + 1):
