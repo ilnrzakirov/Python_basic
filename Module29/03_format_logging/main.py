@@ -4,6 +4,7 @@ from collections.abc import Callable
 import functools
 from datetime import datetime
 
+
 def timer(func: Callable, cls, format) -> Callable:
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -14,12 +15,15 @@ def timer(func: Callable, cls, format) -> Callable:
         end = time.time()
         print(f"Завершение работы {func.__name__}, время работы {end - start}")
         return result
+
     return wrapper
+
 
 def log_methods(format: str) -> Callable:
     date_sym = "bdYHMS"
     date_format = "".join(f"%{x}" if x in date_sym else f"{x}" for x in format)
     print(date_format)
+
     @functools.wraps(timer)
     def decorate(cls):
         for i_method in dir(cls):
@@ -28,9 +32,8 @@ def log_methods(format: str) -> Callable:
                 decorate_method = timer(func=curr_method, cls=cls.__name__, format=date_format)
                 setattr(cls, i_method, decorate_method)
                 return cls
+
     return decorate
-
-
 
 
 @log_methods("b d Y - H:M:S")
@@ -64,3 +67,5 @@ class B(A):
 my_obj = B()
 my_obj.test_sum_1()
 my_obj.test_sum_2()
+
+# зачёт!

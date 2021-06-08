@@ -1,6 +1,8 @@
 from collections.abc import Callable
 import functools
 
+# TODO, пожалуйста, обратите внимание, арги и кварги в этом месте получились лишними.
+#  Стоит добавить ещё одну "обёртку" для аргов и кваргов. А в эту функцию передавать декоратор.
 def decorator_with_args_for_any_decorator(func: Callable, *args, **kwargs) -> Callable:
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
