@@ -1,13 +1,15 @@
 import functools
 
 def singleton(cls):
+    init = {}
     @functools.wraps(cls)
-
-    def wrapper():
-
-        if hasattr(cls, "init") is False:
-            cls.init = cls.__new__
-        return cls.init
+    def wrapper(*args, **kwargs):
+        if cls not in init:
+            init[cls] = cls(*args, **kwargs)
+        return init[cls]
+#        if hasattr(cls, "   init") is False:
+ #           cls.init = cls.__new__
+ #       return cls.init
     return wrapper
 
 # TODO, Возможно, не очень правильная идея опираться на класс init.
