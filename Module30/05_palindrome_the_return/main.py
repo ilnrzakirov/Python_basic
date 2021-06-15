@@ -2,11 +2,14 @@ import collections
 
 
 def can_be_poly(string: str) -> bool:
-    res = list(filter(lambda count: count % 2 != 0 , collections.Counter(string).values()))
+    res = list(filter(lambda count: count % 2 != 0, collections.Counter(string).values()))
+    # Можно упростить до "return len(res) <= 1"
     if len(res) > 1:
         return False
     else:
         return True
+
+
 #    one_letter = 0
 #    for sym in sym_list:
 #        if sym_list[sym] % 2 == 0:
@@ -22,6 +25,8 @@ def can_be_poly(string: str) -> bool:
 print(can_be_poly('ababc'))
 print(can_be_poly('abbbc'))
 
-# TODO, предлагаю попробовать добавить в решение функции filter и lambda и попробовать решить задание
+# , предлагаю попробовать добавить в решение функции filter и lambda и попробовать решить задание
 #  без цикла for с условным оператором. =)
 #  По идее, строка с вычислениями получится всего одна.
+
+# зачёт!
