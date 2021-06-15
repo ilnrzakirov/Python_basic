@@ -1,5 +1,6 @@
 import collections
 
+
 def can_be_poly(string: str) -> bool:
     sym_list = collections.Counter(string)
     one_letter = 0
@@ -16,3 +17,7 @@ def can_be_poly(string: str) -> bool:
 
 print(can_be_poly('ababc'))
 print(can_be_poly('abbbc'))
+
+# TODO, предлагаю попробовать добавить в решение функции filter и lambda и попробовать решить задание
+#  без цикла for с условным оператором. =)
+#  По идее, строка с вычислениями получится всего одна.
