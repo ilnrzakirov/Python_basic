@@ -8,9 +8,9 @@ numbers: List[int] = [22, 33, 10, 6894, 11, 2, 1]
 
 # TODO, в таком случае, получаем не список, а объект Итератор =)
 #  Поэтому, PyCharm подсвечивает строку как ошибку.
-new_floats: List[float] = map(lambda x: round(x ** 3, 3), floats)
-print(list(new_floats))
-new_names: List[str] = filter(lambda x: len(x)>= 5, names)
-print(list(new_names))
+new_floats: List[float] = list(map(lambda x: round(x ** 3, 3), floats))
+print(new_floats)
+new_names: List[str] = list(filter(lambda x: len(x)>= 5, names))
+print(new_names)
 new_number: int = reduce((lambda x , y: x * y), numbers)
 print(new_number)
