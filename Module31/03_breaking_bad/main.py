@@ -5,7 +5,7 @@ temp = dict()
 
 data_on_deaths = json.loads(requests.get('https://breakingbadapi.com/api/deaths').text)
 data_episode = json.loads(requests.get('https://breakingbadapi.com/api/episodes').text)
-# TODO, к data_on_deaths стоит применить json.loads (десериализация объекта), и только после этого передать в функцию max.
+# , к data_on_deaths стоит применить json.loads (десериализация объекта), и только после этого передать в функцию max.
 
 max_deaths = max(data_on_deaths, key=lambda x: x['number_of_deaths'])
 
@@ -23,3 +23,5 @@ print(result)
 
 with open('info.json', 'w') as file:
     json.dump(result, file, indent=4)
+
+# зачёт!

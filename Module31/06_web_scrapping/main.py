@@ -9,3 +9,5 @@ pattern = r'<h3.+>(.*)</h3>'
 
 result_list = re.findall(pattern, data)
 print(result_list)
+
+# зачёт!
