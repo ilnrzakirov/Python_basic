@@ -9,9 +9,8 @@ pettern = r'\b[89]\d{9}'
 #  Дело в том, что цикл for будет работать быстрее, т.к. формирует условие для своей работы только 1 раз, при создании.
 #  В то время, как цикл while проверяет условие своей работы каждую итерацию цикла.
 
-while i < len(number):
-    if re.findall(pettern, number[i]):
-        print(number[i], ': все в порядке')
+for num in number:
+    if re.findall(pettern, num):
+        print(num, ': все в порядке')
     else:
-        print(number[i], ": не подходит")
-    i = i + 1
+        print(num, ": не подходит")
